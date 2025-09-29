@@ -1,0 +1,80 @@
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9f5f7;
+    color: #333;
+}
+header {
+    background-color: #1e88e5;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+nav ul {
+    list-style: none;
+    background-color: #1565c0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #0d47a1;
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    color: #1565c0;
+}
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+.galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+footer {
+    background-color: #1565c0;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
