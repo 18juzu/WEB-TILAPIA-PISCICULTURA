@@ -9,19 +9,19 @@ Mantener el README con: cómo clonar, ramas, paleta, y reglas.
 
 Objetivo: hacer el header más bajo y con video. 
 
-Pasos Crear assets/video/hero.mp4 y hero.webm (clip 10–20 s, 720p o menos). Comprimir con HandBrake (CRF 24–28). Reemplazar el <header> por el bloque Hero en todas las páginas. Ajustar alturas en .hero (48vh) y revisar responsive. Subir assets optimizados. PR feat/hero-video.
+Pasos Crear assets/video/hero.mp4 y hero.webm (clip 10–20 s, 720p o menos). Comprimir con HandBrake (CRF 24–28). Reemplazar el header por el bloque Hero en todas las páginas. Ajustar alturas en .hero (48vh) y revisar responsive. Subir assets optimizados.
 
 # 2) Navegación + Footer (Layout owner) Juan David - Zarhy Liceth
 
 Objetivo: unificar menú y pie. 
 
-Pasos Copiar el bloque <nav> del apartado 2 a todas las páginas. Estilizar con las reglas de nav del CSS. Footer con &copy; 2025 Tilapia Piscicultura (revisar año automático no aplica sin JS).
+Pasos Copiar el bloque nav del apartado 2 a todas las páginas. Estilizar con las reglas de nav del CSS. Footer con &copy; 2025 Tilapia Piscicultura (revisar año automático no aplica sin JS).
 
 # 3) Home / index.html (Secciones y galería) Julián Mendez - Diego Lozano
 
 Objetivo: armar el contenido de bienvenida y galería según Figma. 
 
-Pasos En index.html, debajo del <nav>, envolver todo en <main class="container">. Crear sección Bienvenido con <h2 class="h2"> y párrafo. Crear sección Nuestros Peces con la galería (.galeria) usando 4–8 imágenes reales.
+Pasos En index.html, debajo del nav, envolver todo en <main class="container">. Crear sección Bienvenido con <h2 class="h2"> y párrafo. Crear sección Nuestros Peces con la galería (.galeria) usando 4–8 imágenes reales.
 
 # Crear Sección Tipo de Peces / peces.html
 
