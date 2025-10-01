@@ -1,39 +1,98 @@
-# WEB-TILAPIA-PISCICULTURA
-Web Colaborativa
+# Proyecto Web: Tilapia Piscicultura
 
-Objetivo: coordinar trabajo en equipo. 
+¡Bienvenidos al repositorio del equipo! Somos 10 personas desarrollando la página web para "Tilapia Piscicultura" (crianza sostenible de tilapia y trucha). El objetivo es una página funcional, basada en el mockup de Figma (ver imagen adjunta si la subes).
 
-Mantener el README con: cómo clonar, ramas, paleta, y reglas.
+## Estructura del Proyecto
+- **Corte 1:** Maqueta en Figma (ya aprobada).
+- **Corte 2:** Avance de la página (presentamos este sábado). Enfocamos en header con video, menú funcional, secciones (Nosotros, Nuestros Peces, Contacto), colores representativos (azules para agua, verdes para naturaleza), y estructura general (párrafos, títulos, imágenes).
+- **Corte 3:** Página final funcional (próximas semanas).
 
-# 1) Header con video (Hero owner) Yobani - Clareth
+Archivos iniciales: `index.html` (HTML base) y `styles.css` (CSS base), compartidos por el profe.
 
-Objetivo: hacer el header más bajo y con video. Pasos Crear assets/video/hero.mp4 y hero.webm (clip 10–20 s, 720p o menos). Comprimir con HandBrake (CRF 24–28). Reemplazar el header por el bloque Hero en todas las páginas. Ajustar alturas en .hero (48vh) y revisar responsive. Subir assets optimizados.
+## División de Tareas y Grupos
+Dividí en subproyectos pequeños para evitar choques. Cada grupo trabaja en partes específicas en su propia rama (creadas por mí). Enfócate en HTML para estructura + un poco de CSS para estilos básicos (colores, tamaños). Usa etiquetas HTML como `<header>`, `<nav>`, `<section>`, `<h2>`, `<p>`, `<img>`, `<video>`, `<a>`. En CSS, usa clases o IDs (ej: `.header { background: blue; }`).
 
-# 2) Navegación + Footer (Layout owner) Juan David - Zarhy Liceth
+- **Grupo 1: Header con Video (Yobany - Clareth)**
+  - Qué hacer: Reemplaza la foto del header por un video (usa `<video src="video.mp4" autoplay loop muted></video>`). Agrega título "Tilapia Piscicultura" y slogan. En CSS, usa colores azules/verdes y hazlo responsive (`width: 100%;`).
+  - Paso a paso:
+    1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
+    2. Git: `git pull`.
+    3. Git: `git checkout grupo1-header` (entra a tu rama).
+    4. Edita `index.html`: En `<header>`, borra lo viejo y agrega `<video>` + texto.
+    5. Edita `styles.css`: Agrega `header { background-color: #1e88e5; }` (azul).
+    6. Prueba en navegador.
+    7. Git: `git add .`, `git commit -m "Header con video"`, `git push origin grupo1-header`.
+  - Consideraciones: Video corto (busca uno libre mientras tienes el original). No edites otras secciones. Coordina: ej, Yobany hace video, Clareth hace CSS. Plazo: Viernes 11:00 de la noche.
 
-Objetivo: unificar menú y pie. Pasos Copiar el bloque nav del apartado 2 a todas las páginas. Estilizar con las reglas de nav del CSS. Footer con &copy; 2025 Tilapia Piscicultura (revisar año automático no aplica sin JS).
+- **Grupo 2: Menú de Navegación Funcional (Juan David - Zarhy Peña)**
+  - Qué hacer: Haz que el menú funcione (links a secciones con `<a href="#seccion">`). Agrega items: Inicio, Nosotros, Nuestros Peces, Contacto. En CSS, usa colores azules y hover.
+  - Paso a paso:
+    1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
+    2. Git: `git pull`.
+    3. Git: `git checkout grupo2-menu` (entra a tu rama).
+    4. Edita `index.html`: En `<nav>`, agrega IDs a secciones (ej: `<section id="nosotros">`).
+    5. Edita `styles.css`: `nav { background: #1565c0; }`, hover como en base.
+    6. Prueba clicks.
+    7. Git: `git add .`, `git commit -m "Menú funcional"`, `git push origin grupo2-menu`.
+  - Consideraciones: Links internos (#id). No toques header. Coordina: ej, Juan David hace links, Zarhy hace CSS. Plazo: Viernes 11:00 de la noche.
 
-# 3) Home / index.html (Secciones y galería) Julián Mendez - Diego Lozano
+- **Grupo 3: Sección "Nosotros" (Juan Manuel - Santiago Gonzales)**
+  - Qué hacer: Agrega sección con título, párrafos sobre la empresa, imágenes (`<img src="imagen.jpg" alt="Descripción">`). Colores verdes en CSS.
+  - Paso a paso:
+    1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
+    2. Git: `git pull`.
+    3. Git: `git checkout grupo3-nosotros` (entra a tu rama).
+    4. Edita `index.html`: Agrega `<section id="nosotros"><h2>Nosotros</h2><p>Texto...</p><img>...</section>`.
+    5. Edita `styles.css`: `.nosotros { color: green; }`.
+    6. Prueba.
+    7. Git: `git add .`, `git commit -m "Sección Nosotros"`, `git push origin grupo3-nosotros`.
+  - Consideraciones: Texto real de la empresa. Sube imágenes al repo. Coordina: ej, Juan Manuel hace texto, Santiago imágenes. Plazo: Jueves 5:00 pm.
 
-Objetivo: armar el contenido de bienvenida y galería según Figma. Pasos En index.html, debajo del nav, envolver todo en main class="container". Crear sección Bienvenido con h2 class="h2" y párrafo. Crear sección Nuestros Peces con la galería (.galeria) usando 4–8 imágenes reales.
+- **Grupo 4: Sección "Nuestros Peces" y Galería (Yoinner - Rafael)**
+  - Qué hacer: Expande la galería con más imágenes de peces/estanques y descripciones. CSS para responsive (flexbox como en base).
+  - Paso a paso:
+    1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
+    2. Git: `git pull`.
+    3. Git: `git checkout grupo4-peces` (entra a tu rama).
+    4. Edita `index.html`: En `<section id="peces">`, agrega más `<img>` en `.galeria`.
+    5. Edita `styles.css`: Ajusta tamaños/colores.
+    6. Prueba.
+    7. Git: `git add .`, `git commit -m "Galería Peces"`, `git push origin grupo4-peces`.
+  - Consideraciones: Imágenes libres relacionadas con la empresa. No edites menú. Coordina: ej, Yoinner hace imágenes, Rafael CSS. Plazo: Jueves 5:00 pm.
 
-# Crear Sección Tipo de Peces / peces.html
+- **Grupo 5: Sección "Contacto" y Footer de las demas Secciones (Julian Mendez - Diego Lozano)**
+  - Qué hacer: Agrega formulario simple (`<form><input type="text" placeholder="Nombre"> <button>Enviar</button></form>`). Footer con copyright y colores.
+  - Paso a paso:
+    1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
+    2. Git: `git pull`.
+    3. Git: `git checkout grupo5-contacto` (entra a tu rama).
+    4. Edita `index.html`: `<section id="contacto"><h2>Contacto</h2><form>...</form></section>`. Actualiza footer.
+    5. Edita `styles.css`: Estilos para form (ej: `input { border: 1px solid blue; }`).
+    6. Prueba.
+    7. Git: `git add .`, `git commit -m "Sección Contacto y Footer"`, `git push origin grupo5-contacto`.
+  - Consideraciones: Form no envía real (por ahora). Coordina: ej, Julian Mendez hace form, Diego hace footer. Plazo: Jueves media noche.
 
-Objetivo: grilla de tarjetas de especies. Pasos Crear una grilla 2–3 columnas con display:grid; gap:16px. Tarjeta: imagen arriba, nombre, breve descripción (2–3 líneas). Reusar estilos de galería y botones.
+## Instrucciones Generales para Todos
+- **Git Paso a Paso (Siempre):**
+  1. Abre terminal en Visual Studio Code (Ctrl+`).
+  2. `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez para copiar el repo).
+  3. `git pull` (actualiza antes de empezar).
+  4. `git checkout nombre-de-tu-ramita` (entra a tu rama asignada, ej: grupo1-header).
+  5. Edita solo TU parte (evita conflictos).
+  6. Guarda el archivo o los cambios constantemente (Ctrl+S).
+  7. `git add .`
+  8. `git commit -m "Tu mensaje claro"`.
+  9. `git push origin nombre-de-tu-ramita`.
+  - Si hay error: Haz `git pull` de nuevo o arregla conflictos (Git muestra qué líneas chocan; elige la buena con ayuda si necesitas).
 
-# 4) Sección Nosotros (página + bloque M/V) Santiago Gonzales - Juan Manuel Marin 
+- **Qué Considerar:**
+  - Trabaja en tu copia local. Prueba en navegador antes de push para verificar que funcione.
+  - Usa etiquetas HTML semánticas (`<header>`, `<main>`, etc.) para estructura.
+  - CSS: Agrega clases (ej: `class="mi-clase"`) para estilos específicos.
+  - No instales nada extra; usa HTML/CSS puro.
+  - Comunica en grupo (WhatsApp): Avisa con "Hice pull, voy a editar" y "Hice push" el día que te toque.
+  - Coordina con tu compañero: Trabajen en horarios diferentes o dividan subtareas (ej: uno hace HTML, otro CSS). Esto evita errores al subir al repo (les recomiendo trabajen en horarios diferentes).
+- **Plazo General:** Todo listo para sábado. Yo (Julian Suaza) reviso cada noche y uniré las ramas. Por favor Cumple las fechas
+- **Problemas?** Pregúntame (Julian Suaza). ¡Trabajemos en equipo para un gran avance!
 
-Objetivo: maquetar nosotros.html con texto, fotos y botones Misión/Visión. Pasos Crear estructura estándar (Hero + Nav + main class="container"). Sección "Sobre nosotros" con 1 foto a la izquierda y texto a la derecha (puedes usar un display:flex sencillo). Incluir botones .btn--chip de Misión y Visión.
-
-# Página Misión (detalle)
-
-Pasos Crear mision.html (Hero + Nav + main class="container"). Título Misión, párrafo de 120–180 palabras y 2 fotos relacionadas. Botón .btn--outline para volver a Visión y otro a Inicio.
-
-# Página Visión (detalle) 
-
-Pasos Crear vision.html similar a Misión. Título Visión, texto de 120–180 palabras y 2 fotos. Botones de navegación cruzada.
-
-# 5) Contacto + WhatsApp (Contact owner) Yhoinner - Rafael
-
-Objetivo: página con datos + botón flotante de WhatsApp funcional. Pasos Crear contacto.html con dirección, horario y un formulario estático con action="mailto:correo@dominio.com" (sin JS): campos Nombre, Email, Mensaje. Añadir el enlace de WhatsApp flotante (bloque del apartado 2) con el número real.
-Validar que el ícono no tape el footer en móvil (ajustar bottom si hace falta).
+Actualizado por Julian Suaza.
