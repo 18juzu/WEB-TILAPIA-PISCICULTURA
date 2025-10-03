@@ -16,12 +16,13 @@ Dividí en subproyectos pequeños para evitar choques. Cada grupo trabaja en par
   - Qué hacer: Reemplaza la foto del header por un video (usa `<video src="video.mp4" autoplay loop muted></video>`). Agrega título "Tilapia Piscicultura" y slogan. En CSS, usa colores azules/verdes y hazlo responsive (`width: 100%;`).
   - Paso a paso:
     1. Git: `git clone https://github.com/18juzu/WEB-TILAPIA-PISCICULTURA.git` (solo la primera vez).
-    2. Git: `git pull`.
+    2. Git: `git pull`
     3. Git: `git checkout grupo1-header` (entra a tu rama).
-    4. Edita `index.html`: En `<header>`, borra lo viejo y agrega `<video>` + texto.
-    5. Edita `styles.css`: Agrega `header { background-color: #1e88e5; }` (azul).
-    6. Prueba en navegador.
-    7. Git: `git add .`, `git commit -m "Header con video"`, `git push origin grupo1-header`.
+    4. Git: `git pull origin main` (llamas a la rama principal)
+    5. Edita `index.html`: En `<header>`, borra lo viejo y agrega `<video>` + texto.
+    6. Edita `styles.css`: Agrega `header { background-color: #1e88e5; }` (azul).
+    7. Prueba en navegador.
+    8. Git: `git add .`, `git commit -m "Header con video"`, `git push origin grupo1-header`.
   - Consideraciones: Video corto (busca uno libre mientras tienes el original). No edites otras secciones. Coordina: ej, Yobany hace video, Clareth hace CSS. Plazo: Viernes 11:00 de la noche.
 
 - **Grupo 2: Menú de Navegación Funcional (Juan David - Zarhy Peña)**
