@@ -17,8 +17,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html" class="active">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,22 +26,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">NOSOTROS</h1>
-            <p class="hero-subtitle">Conoce nuestra historia y equipo</p>
+            <h1 class="hero-title reveal-fade">NOSOTROS</h1>
+            <p class="hero-subtitle reveal-fade">Conoce nuestra historia y nuestros productos</p>
         </div>
     </section>
 
     <!-- Quiénes Somos -->
     <section class="about-section">
         <div class="container">
-            <div class="about-content">
+            <div class="about-content reveal-slide">
                 <div class="about-text">
                     <h2>¿Quiénes Somos?</h2>
                     <p>Desde 2020, Tilapia Piscicultura ofrece asesoría técnica a nivel nacional para proyectos independientes de tilapia en ciudades como Barranquilla, Santa Marta, Valledupar y Hobo (Huila), entre otras. Sin oficina física, nos enfocamos en guiar emprendedores con soluciones personalizadas, colaborando con entidades especializadas en infraestructura y recursos químicos como Oxynova para tratamiento de aguas.</p>
                     <p>Nuestro equipo está conformado por profesionales apasionados que trabajan día a día para ofrecer el mejor servicio y productos.</p>
                 </div>
                 <div class="about-image">
-                    <img src="494271012_1246185020842813_2074666595846899513_n.jpg" alt="Tilapia Piscicultura" class="about-img">
+                    <div class="image-placeholder">
+                        <span>Imagen</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,12 +53,12 @@
     <section class="mission-vision">
         <div class="container">
             <div class="mv-grid">
-                <div class="mv-card">
+                <div class="mv-card reveal-scale">
                     <div class="mv-icon">🎯</div>
                     <h3>Misión</h3>
                     <p>Proporcionar productos y servicios de la más alta calidad, satisfaciendo las necesidades de nuestros clientes con innovación, compromiso y excelencia operativa.</p>
                 </div>
-                <div class="mv-card">
+                <div class="mv-card reveal-scale">
                     <div class="mv-icon">🔭</div>
                     <h3>Visión</h3>
                     <p>Ser reconocidos como líderes en nuestro sector, destacando por nuestra innovación constante, calidad excepcional y compromiso con la satisfacción del cliente.</p>
@@ -69,24 +70,24 @@
     <!-- Valores -->
     <section class="values-section">
         <div class="container">
-            <h2 class="section-title">Nuestros Valores</h2>
+            <h2 class="section-title reveal-fade">Nuestros Valores</h2>
             <div class="values-grid">
-                <div class="value-card">
+                <div class="value-card reveal-scale">
                     <div class="value-icon">💼</div>
                     <h4>Profesionalismo</h4>
                     <p>Actuamos con ética y responsabilidad en cada proyecto</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card reveal-scale">
                     <div class="value-icon">🤝</div>
                     <h4>Compromiso</h4>
                     <p>Dedicados a cumplir nuestras promesas y superar expectativas</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card reveal-scale">
                     <div class="value-icon">💡</div>
                     <h4>Innovación</h4>
                     <p>Buscamos constantemente nuevas formas de mejorar</p>
                 </div>
-                <div class="value-card">
+                <div class="value-card reveal-scale">
                     <div class="value-icon">⭐</div>
                     <h4>Calidad</h4>
                     <p>Excelencia en cada detalle de nuestro trabajo</p>
@@ -113,76 +114,97 @@
         </div>
     </section>
 
-    <!-- Productos -->
-    <section class="products-section">
+    <!-- Carrusel de Productos -->
+    <section class="carousel-section">
         <div class="container">
-            <h2 class="section-title">Nuestros Productos</h2>
+            <h2 class="section-title reveal-fade">Nuestros Productos</h2>
             
-            <div class="products-grid">
-                <!-- Producto 1 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto1.jpg" alt="Producto 1" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 1</h3>
-                        <p class="product-description">Descripción detallada del primer producto. Calidad premium y diseño innovador para satisfacer las necesidades de nuestros clientes.</p>
+            <div class="carousel-container">
+                <button class="carousel-button prev" onclick="moveSlide(-1)">
+                    <span>❮</span>
+                </button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Producto 1 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto1.jpg" alt="Producto 1" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 1</h3>
+                                <p class="product-description">Descripción detallada del primer producto. Calidad premium y diseño innovador para satisfacer las necesidades de nuestros clientes.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 2 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto2.jpg" alt="Producto 2" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 2</h3>
+                                <p class="product-description">Descripción detallada del segundo producto. Elegancia y funcionalidad en cada detalle.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 3 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto3.jpg" alt="Producto 3" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 3</h3>
+                                <p class="product-description">Descripción detallada del tercer producto. Tecnología de vanguardia para los mejores resultados.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 4 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto4.jpg" alt="Producto 4" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 4</h3>
+                                <p class="product-description">Descripción detallada del cuarto producto. Estilo moderno y sofisticado para cada ocasión.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 5 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto5.jpg" alt="Producto 5" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 5</h3>
+                                <p class="product-description">Descripción detallada del quinto producto. Comodidad y durabilidad garantizadas.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 6 -->
+                        <div class="carousel-slide">
+                            <div class="product-image-container">
+                                <img src="ruta/producto6.jpg" alt="Producto 6" class="product-image">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Producto 6</h3>
+                                <p class="product-description">Descripción detallada del sexto producto. Diseño exclusivo y único en el mercado.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Producto 2 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto2.jpg" alt="Producto 2" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 2</h3>
-                        <p class="product-description">Descripción detallada del segundo producto. Elegancia y funcionalidad en cada detalle.</p>
-                    </div>
-                </div>
+                <button class="carousel-button next" onclick="moveSlide(1)">
+                    <span>❯</span>
+                </button>
                 
-                <!-- Producto 3 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto3.jpg" alt="Producto 3" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 3</h3>
-                        <p class="product-description">Descripción detallada del tercer producto. Tecnología de vanguardia para los mejores resultados.</p>
-                    </div>
-                </div>
-                
-                <!-- Producto 4 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto4.jpg" alt="Producto 4" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 4</h3>
-                        <p class="product-description">Descripción detallada del cuarto producto. Estilo moderno y sofisticado para cada ocasión.</p>
-                    </div>
-                </div>
-                
-                <!-- Producto 5 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto5.jpg" alt="Producto 5" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 5</h3>
-                        <p class="product-description">Descripción detallada del quinto producto. Comodidad y durabilidad garantizadas.</p>
-                    </div>
-                </div>
-                
-                <!-- Producto 6 -->
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="ruta/producto6.jpg" alt="Producto 6" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Producto 6</h3>
-                        <p class="product-description">Descripción detallada del sexto producto. Diseño exclusivo y único en el mercado.</p>
-                    </div>
+                <div class="carousel-indicators" id="indicators">
+                    <span class="indicator active" onclick="goToSlide(0)"></span>
+                    <span class="indicator" onclick="goToSlide(1)"></span>
+                    <span class="indicator" onclick="goToSlide(2)"></span>
+                    <span class="indicator" onclick="goToSlide(3)"></span>
+                    <span class="indicator" onclick="goToSlide(4)"></span>
+                    <span class="indicator" onclick="goToSlide(5)"></span>
                 </div>
             </div>
         </div>
@@ -191,30 +213,30 @@
     <!-- Historia / Timeline -->
     <section class="timeline-section">
         <div class="container">
-            <h2 class="section-title">Nuestra Historia</h2>
+            <h2 class="section-title reveal-fade">Nuestra Historia</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal-slide">
                     <div class="timeline-year">2010</div>
                     <div class="timeline-content">
                         <h4>Fundación</h4>
                         <p>Iniciamos operaciones con un equipo pequeño pero comprometido</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal-slide">
                     <div class="timeline-year">2015</div>
                     <div class="timeline-content">
                         <h4>Expansión</h4>
                         <p>Abrimos nuevas oficinas y ampliamos nuestro portafolio de servicios</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal-slide">
                     <div class="timeline-year">2020</div>
                     <div class="timeline-content">
                         <h4>Transformación Digital</h4>
                         <p>Implementamos tecnologías de vanguardia en todos nuestros procesos</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal-slide">
                     <div class="timeline-year">2024</div>
                     <div class="timeline-content">
                         <h4>Liderazgo</h4>
@@ -253,5 +275,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="nosotros.js"></script>
 </body>
 </html>
