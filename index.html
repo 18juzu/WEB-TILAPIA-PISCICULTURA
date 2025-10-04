@@ -8,33 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <h1>Tilapia PisciculturA</h1>
-        <p>Criamos peces de calidad, con respeto por la naturaleza 🌿🐟</p>
-    </header>
-
+    
     <!-- Menú de navegación -->
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Quiénes Somos</a></li>
             <li><a href="#">Nuestros Peces</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-
+    
+    <!-- Sección de video de fondo con nombre de empresa -->
+    <section class="video-hero">
+        <iframe class="video-background" 
+                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&showinfo=0&modestbranding=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+        </iframe>
+        <div class="video-overlay">
+            <h1 class="empresa-nombre">Tilapia Piscicultura</h1>
+        </div>
+    </section>
     <!-- Contenido principal -->
     <main>
         <section>
             <h2>Bienvenido</h2>
             <p>En <strong>Piscícola El Manantial</strong> nos dedicamos a la crianza sostenible de tilapia y trucha...</p>
         </section>
-
         <section>
             <h2>Nuestros Peces</h2>
             <p>Contamos con estanques especializados...</p>
-
             <div class="galeria">
                 <img src="URL1.jpg" alt="Tilapia">
                 <img src="URL2.png" alt="Trucha arcoíris">
@@ -43,7 +48,7 @@
             </div>
         </section>
     </main>
-
+    
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2025 Piscícola El Manantial | Todos los derechos reservados</p>

@@ -1,5 +1,3 @@
-
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -8,6 +6,7 @@ body {
     background-color: #e9f5f7;
     color: #333;
 }
+
 header {
     background-color: #1e88e5;
     color: white;
@@ -24,6 +23,7 @@ header p {
     margin-top: 10px;
     font-size: 1.2em;
 }
+
 nav ul {
     list-style: none;
     background-color: #1565c0;
@@ -44,6 +44,49 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #0d47a1;
 }
+
+/* Sección de video hero */
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.empresa-nombre {
+    color: white;
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenido principal */
 main {
     padding: 20px;
     text-align: center;
@@ -52,6 +95,7 @@ main {
 main h2 {
     color: #1565c0;
 }
+
 .galeria {
     display: flex;
     justify-content: center;
@@ -59,6 +103,7 @@ main h2 {
     gap: 15px;
     margin-top: 20px;
 }
+
 .galeria img {
     width: 300px;
     height: 200px;
@@ -71,10 +116,22 @@ main h2 {
 .galeria img:hover {
     transform: scale(1.05);
 }
+
 footer {
     background-color: #1565c0;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 20px;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .empresa-nombre {
+        font-size: 2.5em;
+    }
+    
+.video-hero {
+    height: 350px;
+}
 }
