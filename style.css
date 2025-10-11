@@ -1,56 +1,81 @@
-/* Estilos generales */
+/*  CSS base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1e88e5;  /* azul para agua */
+    --secondary-color: #27ae60;  /* verde para naturaleza */
+    --accent-color: #0d47a1;  /* azul oscuro */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #e9f5f7;  /* fondo claro */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e9f5f7;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
 }
 
-header {
-    background-color: #1e88e5;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-nav ul {
-    list-style: none;
-    background-color: #1565c0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #0d47a1;
-}
-
-/* Sección de video hero */
-.video-hero {
-    position: relative;
+/* header común: fijo, con logo y menú */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgb(175, 105, 105);
+    position: fixed;
     width: 100%;
-    height: 500px;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--secondary-color);
+    background: var(--bg-light);
+}
+
+/* hero con video background */
+.hero {
+    position: relative;
+    height: 500px;  /* dimensiones como en nosotros */
     overflow: hidden;
+    margin-top: 70px;  /* espacio para header fijo */
 }
 
 .video-background {
@@ -59,79 +84,155 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 1;
 }
 
-.video-overlay {
+.hero-content {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.4);  /* overlay para texto legible */
     z-index: 2;
 }
 
-.empresa-nombre {
-    color: white;
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
-/* Contenido principal */
-main {
-    padding: 20px;
-    text-align: center;
+.hero-subtitle {
+    font-size: 1.5rem;
 }
 
-main h2 {
-    color: #1565c0;
+/* secciones generales (como en 'nosotros') */
+.about-section {
+    padding: 80px 20px;
+    background: var(--white);
 }
 
-.galeria {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
-.galeria img {
-    width: 300px;
-    height: 200px;
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    color: var(--text-light);
+}
+
+.about-img {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    border-radius: 15px;
 }
 
-.galeria img:hover {
-    transform: scale(1.05);
+/* galería/productos */
+.products-section {
+    padding: 80px 20px;
+    background: var(--bg-light);
 }
 
-footer {
-    background-color: #1565c0;
-    color: white;
+.section-title {
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
 }
 
-/* Responsive para dispositivos móviles */
-@media (max-width: 768px) {
-    .empresa-nombre {
-        font-size: 2.5em;
-    }
-    
-.video-hero {
-    height: 350px;
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 250px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.product-description {
+    color: var(--text-light);
+}
+
+/* footer común */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+}
+
+/* responsive para móviles */
+@media (max-width: 968px) {
+    .about-content, .products-grid, .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
 }

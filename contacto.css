@@ -1,3 +1,4 @@
+/*  CSS  */
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +6,12 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-dark: #2c3e50;
-    --text-light: #7f8c8d;
-    --bg-light: #ecf0f1;
+    --primary-color: #1e88e5;  
+    --secondary-color: #27ae60;  
+    --accent-color: #0d47a1;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #e9f5f7;
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -19,7 +20,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    overflow-x: hidden;
 }
 
 .container {
@@ -28,15 +28,14 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header común  */
 .header {
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgb(160, 109, 109);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: var(--transition);
 }
 
 .navbar {
@@ -62,127 +61,159 @@ body {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
-    transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu a:hover, .nav-menu a.active {
     color: var(--secondary-color);
     background: var(--bg-light);
 }
-/* ====== ESTILOS FOOTER Y CONTACTO ====== */
 
-.footer {
-    background: #3498db; /* azul oscuro elegante */
-    color: #fff;
-    padding: 50px 20px 20px;
-    margin-top: 40px;
-    font-family: Arial, sans-serif;
+/* hero con video */
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 70px;
 }
 
-.footer .container {
-    max-width: 1200px;
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+}
+
+/* sección contacto con formulario */
+.about-section {
+    padding: 80px 20px;
+    background: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    color: var(--text-light);
+}
+
+.about-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.footer-top {
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 15px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--primary-color);
+}
+
+/* footer común */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px 20px 20px;
+}
+
+.footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 30px;
 }
 
 .footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #ffcc00; /* amarillo para resaltar títulos */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.footer-section p,
-.footer-section li,
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
 .footer-section a {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ddd;
-    text-decoration: none;
+    color: var(--white);
+    opacity: 0.8;
 }
 
-.footer-section a:hover {
-    color: #ffcc00;
-}
-
-/* ====== FORMULARIO DE CONTACTO ====== */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    font-size: 0.95rem;
-    background: #bcbce0;
-    color: #fff;
-    resize: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #ddd;
-}
-
-.contact-form button {
-    padding: 12px;
-    border: none;
-    background: #ffcc00;
-    color: #000;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.contact-form button:hover {
-    background: #ffc107;
-}
-
-
-
-/* ====== FOOTER BOTTOM ====== */
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 15px;
     text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 900px) {
-    .footer-top {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-top {
+/* Responsive */
+@media (max-width: 968px) {
+    .about-content, .footer-content {
         grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .contact-form {
-        align-items: center;
-    }
-    .contact-form input,
-    .contact-form textarea {
-        max-width: 90%;
     }
 }
 
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
 

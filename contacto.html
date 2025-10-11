@@ -1,59 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coctacto - Empresa</title>
+    <title>Contacto - Tilapia Piscicultura</title>
+    <!-- enlace al CSS  -->
     <link rel="stylesheet" href="contacto.css">
 </head>
-<body>
 
-    <!-- Header con navegación -->
+<body>
+    <!-- header común  -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <h1>LOGO</h1>
+                    <!-- logo Pez + texto -->
+                    <h1>Tilapia Piscicultura</h1>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto.html"class="active">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-s
-    <!-- Contacto + Footer Unido -->
-    <footer class="footer" id="contacto">
+
+    <!-- hero section con video de fondo -->
+    <section class="hero">
+        <iframe class="video-background" 
+                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&modestbranding=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+        </iframe>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Contacto</h1>
+            <p class="hero-subtitle">Envíanos tu mensaje</p>
+        </div>
+    </section>
+
+    <!-- ección contacto con formulario -->
+    <section class="about-section">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-section">
-                    <h3>Contáctanos</h3>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="text" placeholder="Apellido" required>
-                        <input type="email" placeholder="Correo" required>
-                        <textarea placeholder="Mensaje" required></textarea>
-                        <button type="submit">Enviar Mensaje</button>
-                    </form>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Contáctanos</h2>
+                    <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Llena el formulario o usa nuestros datos.</p>
                 </div>
+
+                <div class="about-image">
+                    <!-- imagen de contacto -->
+                    <img src="imagen-contacto.jpg" alt="Contacto Tilapia" class="about-img">
+                </div>
+            </div>
+            
+            <!-- formulario simple -->
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button> 
+            </form>
+        </div>
+    </section>
+
+    <!-- footer común -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Empresa</h3>
-                    <p>Comprometidos desde 2020</p>
-                    <p>Email: info@empresa.com</p>
+                    <h3>Tilapia Piscicultura</h3>
+                    <p>Comprometidos con la excelencia y la innovación desde 2020.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: info@tilapiapiscicultura.com</p>
                     <p>Tel: +57 123 456 7890</p>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Empresa. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Tilapia Piscicultura | Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
 
 
