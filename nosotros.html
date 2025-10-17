@@ -5,41 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Empresa</title>
     <link rel="stylesheet" href="nosotros.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
 </head>
 
 <body>
-    <!-- header con navegación -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1>Tilapia Piscicultura</h1>
-                </div>
 
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html" class="active">Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Placeholder para cargar el nav -->
+      <div id="nav-placeholder"></div>
 
-     <!-- hero Section con video de fondo -->
-    <section class="hero">
-        <iframe class="video-background" 
-                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
-
-        <div class="hero-content">
-            <h1 class="hero-title">Tilapia Piscicultura</h1>
-            <p class="hero-subtitle">Criamos peces de calidad con respeto por la naturaleza</p>
-        </div>
-    </section>
-
+    <!--Placeholder para cargar videoheader-->
+      <div id="video-placeholder"></div>
 
     <!-- quiénes somos -->
     <section class="about-section">
@@ -278,5 +254,37 @@
             </div>
         </div>
     </footer>
-</body>
+
+    <!-- Script para cargar header.html -->
+    <script>
+
+        // Función para cargar nav.html
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                  // contorno verde en el botón actual
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+              });
+            })
+            .catch(error => console.error('Error cargando nav:', error));
+    </script>
+
+    <script>
+
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    </script>
+
+     </body>
 </html>

@@ -1,0 +1,40 @@
+/* hero con video background */
+.hero {
+    position: relative;
+    height: 500px;  /* dimensiones como en 'nosotros' */
+    overflow: hidden;
+    margin-top: 70px;  /* espacio para header fijo */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.4);  /* overlay para texto legible */
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+}

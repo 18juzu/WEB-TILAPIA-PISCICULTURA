@@ -7,40 +7,17 @@
     <title>Contacto - Tilapia Piscicultura</title>
     <!-- enlace al CSS  -->
     <link rel="stylesheet" href="contacto.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
 </head>
 
 <body>
-    <!-- header común  -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <!-- logo Pez + texto -->
-                    <h1>Tilapia Piscicultura</h1>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- hero section con video de fondo -->
-    <section class="hero">
-        <iframe class="video-background" 
-                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
+        <!-- Placeholder para cargar el nav -->
+         <div id="nav-placeholder"></div>
 
-        <div class="hero-content">
-            <h1 class="hero-title">Contacto</h1>
-            <p class="hero-subtitle">Envíanos tu mensaje</p>
-        </div>
-    </section>
+        <!--Placeholder para cargar videoheader-->
+         <div id="video-placeholder"></div>
 
     <!-- ección contacto con formulario -->
     <section class="about-section">
@@ -97,7 +74,39 @@
             </div>
         </div>
     </footer>
-</body>
+
+    <!-- Script para cargar header.html -->
+    <script>
+        // Función para cargar header
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                  
+                // contorno verde en el botón actual
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+              });
+            })
+            .catch(error => console.error('Error cargando nav:', error));
+              </script>
+
+         <script>
+
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    
+             </script>
+
+     </body>
 </html>
 
 
