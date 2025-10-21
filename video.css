@@ -1,18 +1,18 @@
-/* hero con video background */
 .hero {
     position: relative;
-    height: 500px;  /* dimensiones como en 'nosotros' */
+    height: 600px; /* Alto fijo para visibilidad */
     overflow: hidden;
-    margin-top: 70px;  /* espacio para header fijo */
+    margin-top: 60px; /* Espacio para el nav */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    width: 100%; /* Estira al 100% del contenedor */
+    height: 100%; /* Llena el alto del hero */
+    object-fit: cover; /* Ajusta el video para cubrir sin distorsión */
 }
 
 .hero-content {
@@ -25,16 +25,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--white);
-    background: rgba(0, 0, 0, 0.4);  /* overlay para texto legible */
+    color: white;
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro para texto */
     z-index: 2;
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 400px;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+.hero {
+    height: 56.25vw; /* 9/16 del ancho de la ventana */
 }

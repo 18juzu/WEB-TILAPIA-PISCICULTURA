@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="nosotros.css">
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
-</head>
+    
 
 <body>
 
@@ -256,24 +256,23 @@
     </footer>
 
     <!-- Script para cargar header.html -->
-    <script>
-
-        // Función para cargar nav.html
-        fetch('nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-
-                  // contorno verde en el botón actual
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
             const links = document.querySelectorAll('.nav-menu a');
             links.forEach(link => {
-                if (link.href === window.location.href) {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
                     link.classList.add('active');
                 }
-              });
-            })
-            .catch(error => console.error('Error cargando nav:', error));
-    </script>
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
 
     <script>
 
