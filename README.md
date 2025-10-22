@@ -91,7 +91,7 @@ Cumplir con las fechas estimuladas de entrega de cada uno de los grupos de desar
 
 **Nota:** Al final de su sección hay un script de JavaScript (igual que en Inicio) para traer el nav y video. No lo toquen, solo se ajusta con permisos. Trabajen en HTML y CSS.
 
-**Fecha de entrega:** Miércoles 22 de octubre.
+**Fecha de entrega:** Viernes 24 de octubre.
 
 ---
 
@@ -112,7 +112,7 @@ Cumplir con las fechas estimuladas de entrega de cada uno de los grupos de desar
 
 **Nota:**Al final de su sección hay un script de JavaScript al final. No lo toquen, solo se modifica con permisos. Trabajen en HTML y CSS.
 
-**Fecha de entrega:** Viernes 24 de octubre.
+**Fecha de entrega:** Sábado 25 de octubre.
 
 ---
 
@@ -133,7 +133,7 @@ Cumplir con las fechas estimuladas de entrega de cada uno de los grupos de desar
 
 **Nota:** Si al momento de revisar los cambios n el navegador no aparecen, no duden en contactar a Julian suaza ya que podria ser problemas del scritp.
 
-**Fecha de entrega:** Jueves 23 de octubre.
+**Fecha de entrega:** Domingo 26 de octubre.
 
 ---
 
