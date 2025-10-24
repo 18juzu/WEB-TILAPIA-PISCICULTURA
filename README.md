@@ -75,7 +75,8 @@ Cumplir con las fechas estimuladas de entrega de cada uno de los grupos de desar
 ---
 
 ### 2. Sección "Nosotros"
-**Descripción:** Modificar los colores según Figma, añadir visión, misión, valores, descripción de servicios con imagen, imágenes de productos con descripciones pequeñas, e historia de la empresa (información proporcionada por el Julian Suaza). Sin animaciones en JavaScript por ahora.
+**Descripción:** Modificar los colores según Figma, añadir visión, misión, valores, descripción de servicios con imagen, imágenes de productos con descripciones pequeñas, e historia de la empresa (información proporcionada por Julian Suaza). Sin animaciones en JavaScript por ahora.
+Remplazar el Apartado de Nuestros Servicios por "Transparencia" agregando una descripción y un video que se les asignara.
 
 **Pasos para subir a GitHub:**
 - Abre tu editor en la carpeta del proyecto.
