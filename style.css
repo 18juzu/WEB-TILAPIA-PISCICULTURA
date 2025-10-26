@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Estilos generales */
 :root {
     --primary-color: #1e88e5;
@@ -14,119 +15,75 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-light);
+=======
+/*  CSS base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1e88e5;  /* azul para agua */
+    --secondary-color: #27ae60;  /* verde para naturaleza */
+    --accent-color: #0d47a1;  /* azul oscuro */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #e9f5f7;  /* fondo claro */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+>>>>>>> main
     color: var(--text-dark);
 }
 
-header {
-    background-color: #1e88e5;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+
+
+/* secciones generales (como en 'nosotros') */
+.about-section {
+    padding: 80px 20px;
+    background: var(--white);
 }
 
-header p {
-    margin-top: 10px;
-    font-size: 1.2em;
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
-nav ul {
-    list-style: none;
-    background-color: #1565c0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
 }
 
-nav ul li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    transition: background 0.3s;
+.about-text p {
+    color: var(--text-light);
 }
 
-nav ul li a:hover {
-    background-color: #0d47a1;
-}
-
-/* Sección de video hero */
-.video-hero {
-    position: relative;
+.about-img {
     width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-.empresa-nombre {
-    color: white;
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Contenido principal */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-main h2 {
-    color: #1565c0;
-}
-
-.galeria {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.galeria img {
-    width: 300px;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    border-radius: 15px;
 }
 
-.galeria img:hover {
-    transform: scale(1.05);
+/* galería/productos */
+.products-section {
+    padding: 80px 20px;
+    background: var(--bg-light);
 }
 
+<<<<<<< HEAD
 /* Footer */
 .footer {
     background: var(--primary-color);
@@ -206,15 +163,96 @@ main h2 {
         order: initial;
         text-align: left;
     }
+=======
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+>>>>>>> main
 }
 
-/* Responsive para dispositivos móviles */
-@media (max-width: 768px) {
-    .empresa-nombre {
-        font-size: 2.5em;
-    }
-    
-.video-hero {
-    height: 350px;
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 250px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.product-description {
+    color: var(--text-light);
+}
+
+/* footer común */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+}
+
+/* responsive para móviles */
+@media (max-width: 968px) {
+    .about-content, .products-grid, .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
 }
