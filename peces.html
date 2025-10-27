@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Empresa</title>
+    <link rel="stylesheet" href="peces.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
+    
+
+<body>
+        <!-- Placeholder para cargar el nav -->
+        <div id="nav-placeholder"></div>
+    
+         <!--Placeholder para cargar videoheader-->
+        <div id="video-placeholder"></div>
+    
+        
+     <!-- SECCIÓN 1 -->
+  <section class="seccion">
+    <img src="https://picsum.photos/500/300?random=1" alt="Tilapia" />
+    <div class="texto">
+      <h2>Sobre Tilapia Piscicultura: Expertos en Acuicultura Nacional</h2>
+      <p>
+        Desde 2020, Tilapia Piscicultura ofrece asesoría técnica a nivel nacional para proyectos independientes de tilapia en ciudades como Barranquilla, Santa Marta, Valledupar y Hobo (Huila), entre otras.
+        Nos enfocamos en brindar soluciones personalizadas y sostenibles, colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.
+      </p>
+      <p>Sin oficinas fisicas, nos enfocamos en guiar emprendedores con soluciones personalizadas,
+         colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.</p>
+    </div>
+    </section>
+    <!--NUEVA SECCIÓN DIFERENCIADORES -->
+        <section class="diferenciadores">
+            <img src="https://picsum.photos/400/400?random=5" alt="Asesorías piscícolas">
+            <div class="texto-dif">
+                <h2>Diferenciadores</h2>
+                <ul>
+                    <li><strong>Asesorías integrales:</strong> biometría de peso, control de crecimiento, alimentación y dirección de equipos para un trabajo eficiente</li>
+                    <li><strong>Viabilidad completa:</strong> evaluación de clima, agua y producción, diseñando estanques y entregando reportes de costos totales</li>
+                    <li><strong>Sostenibilidad:</strong> uso de biofloc y Oxynova para entornos ecológicos y rentables.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--NUEVA SECCIÓN PRODUCTOS -->
+        <section class="productos">
+            <h2>Algunos De Nuestros Productos Son Los Siguientes</h2>
+            <div class="grilla-productos">
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=6" alt="Estabilizador de agua">
+                    <h3>Estabilizador de Agua</h3>
+                    <p>Optimiza la calidad del agua y mejora la salud de los peces.</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=7" alt="Nutrilapia">
+                    <h3>Nutrilapia</h3>
+                    <p>Alimento balanceado con nutrientes esenciales para tilapias.</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=8" alt="Oxynova">
+                    <h3>Oxynova</h3>
+                    <p>Solución ecológica para oxigenar y mantener el equilibrio del estanque.</p>
+                </div>
+            </div>
+        </section>
+    
+    
+  <!-- footer común -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tilapia Piscicultura</h3>
+                    <p>Comprometidos con la excelencia y la innovación desde 2020.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: info@tilapiapiscicultura.com</p>
+                    <p>Tel: +57 123 456 7890</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tilapia Piscicultura | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Script para cargar header.html -->
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
+
+    <script>
+
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    </script>
+
+     </body>
+</html>
