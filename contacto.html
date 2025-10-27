@@ -24,24 +24,45 @@
     <section class="about-section">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>Contáctanos</h2>
-                    <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Llena el formulario o usa nuestros datos.</p>
+                <div class="about-left">
+                    <div class="about-text">
+                        <h2>Contáctanos</h2>
+                        <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Al contactarnos recibirás:</p>
+                        <ul class="benefits-list">
+                            <li>Asesoría técnica especializada sobre cría y manejo de tilapia.</li>
+                            <li>Cotizaciones de equipos y suministros.</li>
+                            <li>Programas de visita técnica y soporte en sitio.</li>
+                            <li>Planes de capacitación y optimización de producción.</li>
+                        </ul>
+                        <p class="note">Completa el formulario y se abrirá tu cliente de correo para enviar la solicitud. Si prefieres, escríbenos directamente a <a href="mailto:info@tilapiapiscicultura.com">info@tilapiapiscicultura.com</a>.</p>
+                    </div>
+
+                    <!-- formulario mejorado y enlazado a correo -->
+                    <form class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
+                        <label for="name">Nombre</label>
+                        <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
+
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
+
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input id="phone" name="Telefono" type="tel" placeholder="+57 300 123 4567">
+
+                        <label for="message">Mensaje / Consulta</label>
+                        <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Enviar mensaje</button>
+                            <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="about-image">
-                    <!-- imagen de contacto -->
-                    <img src="imagen-contacto.jpg" alt="Contacto Tilapia" class="about-img">
+                    <!-- imagen de contacto (usa la imagen del proyecto si existe) -->
+                    <img src="imagen contacto.jpg" alt="Contacto Tilapia" class="about-img">
                 </div>
             </div>
-            
-            <!-- formulario simple -->
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo" required>
-                <textarea placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button> 
-            </form>
         </div>
     </section>
 
@@ -49,29 +70,46 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Logo y Descripción -->
                 <div class="footer-section">
-                    <h3>Tilapia Piscicultura</h3>
-                    <p>Comprometidos con la excelencia y la innovación desde 2020.</p>
+                    <div class="footer-logo">
+                        <div class="logo-header">
+                            <img src="Captura de pantalla 2025-10-26 181942.png" alt="Tilapia Piscicultura">
+                            <h2>Tilapia Piscicultura</h2>
+                        </div>
+                        <p>Explora Más de Nosotros a través de Nuestras redes Sociales.</p>
+                    </div>
                 </div>
 
+                <!-- Explorar -->
                 <div class="footer-section">
-                    <h3>Enlaces</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                    <h2>Explora</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Proyectos Asesorados</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
 
+                <!-- Contacto -->
                 <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p>Email: info@tilapiapiscicultura.com</p>
-                    <p>Tel: +57 123 456 7890</p>
+                    <h2>Contacto</h2>
+                    <div class="contact-info">
+                        <p>321 35 98 507</p>
+                        <p>tilapispiscicultura@gmail.com</p>
+                        <p>Huila</p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Tu Correo Electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tilapia Piscicultura | Todos los derechos reservados</p>
             </div>
         </div>
     </footer>

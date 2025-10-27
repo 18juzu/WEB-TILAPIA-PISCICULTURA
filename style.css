@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Estilos generales */
 :root {
     --primary-color: #1e88e5;  /* azul para agua */
     --secondary-color: #27ae60;  /* verde para naturaleza */
@@ -19,7 +20,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    background-color: var(--bg-light);
 }
 
 .container {
@@ -28,9 +29,7 @@ body {
     padding: 0 20px;
 }
 
-
-
-/* secciones generales (como en 'nosotros') */
+/* secciones generales */
 .about-section {
     padding: 80px 20px;
     background: var(--white);
@@ -108,45 +107,191 @@ body {
     color: var(--text-light);
 }
 
-/* footer común */
-.footer {
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
     background: var(--primary-color);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #111;
     color: var(--white);
-    padding: 60px 20px 20px;
+    padding: 60px 20px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-bottom: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-section h3 {
-    font-size: 1.5rem;
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: auto;
+}
+
+.footer-logo h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.footer-logo p {
+    color: #999;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-section h2 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 2px;
+    background-color: #27ae60;
+}
+
+.footer-explore p {
+    color: #999;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
     margin-bottom: 1rem;
 }
 
-.footer-section ul li {
-    margin-bottom: 0.5rem;
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.footer-section a {
-    color: var(--white);
-    opacity: 0.8;
+.footer-links a:hover {
+    color: #27ae60;
+    padding-left: 5px;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.7;
+.footer-contact {
+    color: #999;
 }
 
-/* responsive para móviles */
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: #27ae60;
+}
+
+.footer-subscribe {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.footer-subscribe input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 50px;
+    background: #222;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.footer-subscribe button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    background: #27ae60;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.footer-subscribe button:hover {
+    background: #219a52;
+}
+
+/* Responsive */
 @media (max-width: 968px) {
-    .about-content, .products-grid, .footer-content {
+    .about-content, 
+    .products-grid, 
+    .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item:nth-child(even) .timeline-year,
+    .timeline-item:nth-child(even) .timeline-content {
+        order: initial;
+        text-align: left;
     }
 }
 
