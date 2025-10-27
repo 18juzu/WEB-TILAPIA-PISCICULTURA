@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Empresa</title>
     <link rel="stylesheet" href="nosotros.css">
-</head>
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
+    
 
 <body>
-    <!-- header con navegación -->
+
+    <!-- Header con navegación -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <h1>Tilapia Piscicultura</h1>
+                    <h1>LOGO</h1>
                 </div>
-
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html" class="active">Nosotros</a></li>
@@ -24,22 +26,15 @@
             </nav>
         </div>
     </header>
+=======
+>>>>>>> main
+>>>>>>> d225065c6d3bed2e6b81629887f4775c14b680e8
 
-     <!-- hero Section con video de fondo -->
-    <section class="hero">
-        <iframe class="video-background" 
-                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
+    <!-- Placeholder para cargar el nav -->
+      <div id="nav-placeholder"></div>
 
-        <div class="hero-content">
-            <h1 class="hero-title">Tilapia Piscicultura</h1>
-            <p class="hero-subtitle">Criamos peces de calidad con respeto por la naturaleza</p>
-        </div>
-    </section>
-
+    <!--Placeholder para cargar videoheader-->
+      <div id="video-placeholder"></div>
 
     <!-- quiénes somos -->
     <section class="about-section">
@@ -248,35 +243,85 @@
         </div>
     </section>
 
-     <!-- footer común -->
+    <!-- footer común -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Logo y Descripción -->
                 <div class="footer-section">
-                    <h3>Tilapia Piscicultura</h3>
-                    <p>Comprometidos con la excelencia y la innovación desde 2020.</p>
+                    <div class="footer-logo">
+                        <div class="logo-header">
+                            <img src="Captura de pantalla 2025-10-26 181942.png" alt="Tilapia Piscicultura">
+                            <h2>Tilapia Piscicultura</h2>
+                        </div>
+                        <p>Explora Más de Nosotros a través de Nuestras redes Sociales.</p>
+                    </div>
                 </div>
 
+                <!-- Explorar -->
                 <div class="footer-section">
-                    <h3>Enlaces</h3>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                    <h2>Explora</h2>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Proyectos Asesorados</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
 
+                <!-- Contacto -->
                 <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p>Email: info@tilapiapiscicultura.com</p>
-                    <p>Tel: +57 123 456 7890</p>
+                    <h2>Contacto</h2>
+                    <div class="contact-info">
+                        <p>321 35 98 507</p>
+                        <p>tilapispiscicultura@gmail.com</p>
+                        <p>Huila</p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Tu Correo Electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tilapia Piscicultura | Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
-</body>
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Script para cargar header.html -->
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
+
+    <script>
+
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    </script>
+
+     </body>
 </html>
