@@ -65,7 +65,7 @@ body {
   border-radius: 20px;
   margin-top: 40px;
 
-  /* 🎨 Degradado vertical de arriba a abajo */
+  /*  Degradado vertical de arriba a abajo */
   background: linear-gradient(to bottom, #ffffff 0%, #1a1a1a 40%, #000000 50%, #1a1a1a 60%, #ffffff 100%);
   color: #fff;
 }
@@ -142,67 +142,165 @@ body {
   font-size: 14px;
   color: #555;
 }
+
 /* footer común */
+
 .footer {
-    background: var(--primary-color);
+    background-color: #111;
     color: var(--white);
-    padding: 60px 20px 20px;
+    padding: 60px 20px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-bottom: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-section h3 {
-    font-size: 1.5rem;
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 70px;
+    height: auto;
+}
+
+.footer-logo h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.footer-logo p {
+    color: #999;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-section h2 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 2px;
+    background-color: #27ae60;
+}
+
+.footer-explore p {
+    color: #999;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
     margin-bottom: 1rem;
 }
 
-.footer-section ul li {
-    margin-bottom: 0.5rem;
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.footer-section a {
-    color: var(--white);
-    opacity: 0.8;
+.footer-links a:hover {
+    color: #27ae60;
+    padding-left: 5px;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0.7;
+.footer-contact {
+    color: #999;
 }
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: #27ae60;
+}
+
+.footer-subscribe {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.footer-subscribe input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 50px;
+    background: #222;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.footer-subscribe button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    background: #27ae60;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.footer-subscribe button:hover {
+    background: #219a52;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
-    .about-content,
-    .mv-grid,
-    .footer-content,
-    .services-content {
-        grid-template-columns: 1fr;
-    }
-
-    .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .timeline-item {
+    .about-content, 
+    .products-grid, 
+    .footer-content {
         grid-template-columns: 1fr;
     }
 
     .timeline::before {
         left: 0;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
     }
 
     .timeline-item:nth-child(even) .timeline-year,
@@ -213,38 +311,7 @@ body {
 }
 
 @media (max-width: 640px) {
-    .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .values-grid,
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
     .hero-title {
         font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .services-text h2 {
-        font-size: 2rem;
-    }
-
-    .btn-contact {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-
-    .product-name {
-        font-size: 1.3rem;
-    }
-
-    .product-description {
-        font-size: 0.95rem;
     }
 }
