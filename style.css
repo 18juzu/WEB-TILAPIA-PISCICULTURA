@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Estilos generales */
 :root {
     --primary-color: #1e88e5;  /* azul para agua */
     --secondary-color: #27ae60;  /* verde para naturaleza */
@@ -19,7 +20,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    background-color: var(--bg-light);
 }
 
 .container {
@@ -28,9 +29,7 @@ body {
     padding: 0 20px;
 }
 
-
-
-/* secciones generales (como en 'nosotros') */
+/* secciones generales */
 .about-section {
     padding: 80px 20px;
     background: var(--white);
@@ -106,6 +105,28 @@ body {
 
 .product-description {
     color: var(--text-light);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 /* Footer Styles */
@@ -251,10 +272,26 @@ body {
     background: #219a52;
 }
 
-/* responsive para móviles */
+/* Responsive */
 @media (max-width: 968px) {
-    .about-content, .products-grid, .footer-content {
+    .about-content, 
+    .products-grid, 
+    .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item:nth-child(even) .timeline-year,
+    .timeline-item:nth-child(even) .timeline-content {
+        order: initial;
+        text-align: left;
     }
 }
 

@@ -24,29 +24,49 @@
     <section class="about-section">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>Contáctanos</h2>
-                    <p>Brindamos asesoria en la producion de tilapia.</p>
-                    <p>Nos dedicamos a la producción de tilapia en sistemas intensivos bioflocs, contamos también con asesorías para la producción de su proyecto 100 porciento garantizado.</p>
+                <div class="about-left">
+                    <div class="about-text">
+                        <h2>Contáctanos</h2>
+                        <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Al contactarnos recibirás:</p>
+                        <ul class="benefits-list">
+                            <li>Asesoría técnica especializada sobre cría y manejo de tilapia.</li>
+                            <li>Cotizaciones de equipos y suministros.</li>
+                            <li>Programas de visita técnica y soporte en sitio.</li>
+                            <li>Planes de capacitación y optimización de producción.</li>
+                        </ul>
+                        <p class="note">Completa el formulario y se abrirá tu cliente de correo para enviar la solicitud. Si prefieres, escríbenos directamente a <a href="mailto:info@tilapiapiscicultura.com">info@tilapiapiscicultura.com</a>.</p>
+                    </div>
+
+                    <!-- formulario mejorado y enlazado a correo -->
+                    <form class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
+                        <label for="name">Nombre</label>
+                        <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
+
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
+
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input id="phone" name="Telefono" type="tel" placeholder="+57 300 123 4567">
+
+                        <label for="message">Mensaje / Consulta</label>
+                        <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Enviar mensaje</button>
+                            <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="about-image">
-                    <!-- imagen de contacto -->
+                    <!-- imagen de contacto (usa la imagen del proyecto si existe) -->
                     <img src="imagen contacto.jpg" alt="Contacto Tilapia" class="about-img">
                 </div>
             </div>
-            
-            <!-- formulario simple -->
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo" required>
-                <textarea placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button> 
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- footer común -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -93,8 +113,6 @@
             </div>
         </div>
     </footer>
-    <!-- Font Awesome para los iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Script para cargar header.html -->
   <script>
