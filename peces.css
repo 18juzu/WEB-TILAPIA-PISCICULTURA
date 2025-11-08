@@ -143,8 +143,7 @@ body {
   color: #555;
 }
 
-/* footer común */
-
+/* Footer Styles */
 .footer {
     background-color: #111;
     color: var(--white);
@@ -286,7 +285,6 @@ body {
 .footer-subscribe button:hover {
     background: #219a52;
 }
-
 /* Responsive */
 @media (max-width: 968px) {
     .about-content, 

@@ -11,6 +11,9 @@
      <link rel="stylesheet" href="video.css">
     
 </head>
+<a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría" class="whatsapp-flotante" target="_blank">
+  <img src="assets/img/WhatsApp.png" alt="WhatsApp">
+</a>
 
 <body>
 
@@ -20,25 +23,44 @@
         <!--Placeholder para cargar videoheader-->
          <div id="video-placeholder"></div>
 
-    <!-- ección contacto con formulario -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-left">
-                    <div class="about-text">
-                        <h2>Contáctanos</h2>
-                        <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Al contactarnos recibirás:</p>
-                        <ul class="benefits-list">
-                            <li>Asesoría técnica especializada sobre cría y manejo de tilapia.</li>
-                            <li>Cotizaciones de equipos y suministros.</li>
-                            <li>Programas de visita técnica y soporte en sitio.</li>
-                            <li>Planes de capacitación y optimización de producción.</li>
-                        </ul>
-                        <p class="note">Completa el formulario y se abrirá tu cliente de correo para enviar la solicitud. Si prefieres, escríbenos directamente a <a href="mailto:info@tilapiapiscicultura.com">info@tilapiapiscicultura.com</a>.</p>
-                    </div>
+ <!--  texto + imagen -->
+<section class="info-section">
+  <div class="container">
+    <div class="info-grid">
 
-                    <!-- formulario mejorado y enlazado a correo -->
-                    <form class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
+      <!-- izquierda Texto -->
+      <div class="info-text">
+        <h2>Contáctanos</h2>
+        <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Al contactarnos recibirás:</p>
+        <ul class="benefits-list">
+          <li>Asesoría técnica especializada sobre cría y manejo de tilapia.</li>
+          <li>Cotizaciones de equipos y suministros.</li>
+          <li>Programas de visita técnica y soporte en sitio.</li>
+          <li>Planes de capacitación y optimización de producción.</li>
+        </ul>
+        <p class="note">
+          Completa el formulario y se abrirá tu cliente de correo.<br>
+          O escríbenos a <a href="mailto:info@tilapiapiscicultura.com">info@tilapiapiscicultura.com</a>.
+        </p>
+      </div>
+
+      <!-- derecha imagen -->
+      <div class="info-image">
+        <img src="./assets/img/imagen contacto.jpg" alt="Equipo Tilapia" class="info-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <!-- formulario mejorado y enlazado a correo -->
+                    <section class="about-section">
+                     <div class="container">
+                        <div class="about-content2">
+                            <div class="about-center">
+                                <div class="about-text">
+                    <div class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
                         <label for="name">Nombre</label>
                         <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
 
@@ -46,7 +68,7 @@
                         <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
 
                         <label for="phone">Teléfono (opcional)</label>
-                        <input id="phone" name="Telefono" type="tel" placeholder="+57 300 123 4567">
+                        <input id="phone" name="Telefono" type="tel" placeholder="‪+57 300 123 4567‬">
 
                         <label for="message">Mensaje / Consulta</label>
                         <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
@@ -55,18 +77,16 @@
                             <button type="submit" class="btn-submit">Enviar mensaje</button>
                             <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
                         </div>
+                    </div>
+                    </div>
+                    </div>
+                        </div>
                     </form>
                 </div>
 
-                <div class="about-image">
-                    <!-- imagen de contacto (usa la imagen del proyecto si existe) -->
-                    <img src="./assets/img/imagen contacto.jpg" alt="Contacto Tilapia" class="about-img">
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 
-    <!-- footer común -->
+   <!-- footer común -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -85,15 +105,15 @@
                 <div class="footer-section">
                     <h2>Explora</h2>
                     <ul class="footer-links">
-                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
                         <li><a href="#">Servicios</a></li>
                         <li><a href="#">Proyectos Asesorados</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -113,7 +133,10 @@
             </div>
         </div>
     </footer>
-
+    
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
     <!-- Script para cargar header.html -->
   <script>
     fetch('nav.html')
