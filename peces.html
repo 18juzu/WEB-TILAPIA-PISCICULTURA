@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Empresa</title>
+    <link rel="stylesheet" href="peces.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
+    
+
+<body>
+        <!-- Placeholder para cargar el nav -->
+        <div id="nav-placeholder"></div>
+    
+         <!--Placeholder para cargar videoheader-->
+        <div id="video-placeholder"></div>
+    
+        
+     <!-- SECCIÓN 1 -->
+  <section class="seccion">
+    <img src="https://picsum.photos/500/300?random=1" alt="Tilapia" />
+    <div class="texto">
+      <h2>Sobre Tilapia Piscicultura: Expertos en Acuicultura Nacional</h2>
+      <p>
+        Desde 2020, Tilapia Piscicultura ofrece asesoría técnica a nivel nacional para proyectos independientes de tilapia en ciudades como Barranquilla, Santa Marta, Valledupar y Hobo (Huila), entre otras.
+        Nos enfocamos en brindar soluciones personalizadas y sostenibles, colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.
+      </p>
+      <p>Sin oficinas fisicas, nos enfocamos en guiar emprendedores con soluciones personalizadas,
+         colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.</p>
+    </div>
+    </section>
+    <!--NUEVA SECCIÓN DIFERENCIADORES -->
+        <section class="diferenciadores">
+            <img src="https://picsum.photos/400/400?random=5" alt="Asesorías piscícolas">
+            <div class="texto-dif">
+                <h2>Diferenciadores</h2>
+                <ul>
+                    <li><strong>Asesorías integrales:</strong> biometría de peso, control de crecimiento, alimentación y dirección de equipos para un trabajo eficiente</li>
+                    <li><strong>Viabilidad completa:</strong> evaluación de clima, agua y producción, diseñando estanques y entregando reportes de costos totales</li>
+                    <li><strong>Sostenibilidad:</strong> uso de biofloc y Oxynova para entornos ecológicos y rentables.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--NUEVA SECCIÓN PRODUCTOS -->
+        <section class="productos">
+            <h2>Algunos De Nuestros Productos Son Los Siguientes</h2>
+            <div class="grilla-productos">
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=6" alt="Estabilizador de agua">
+                    <h3>Estabilizador de Agua</h3>
+                    <p>Optimiza la calidad del agua y mejora la salud de los peces.</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=7" alt="Nutrilapia">
+                    <h3>Nutrilapia</h3>
+                    <p>Alimento balanceado con nutrientes esenciales para tilapias.</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="https://picsum.photos/200/200?random=8" alt="Oxynova">
+                    <h3>Oxynova</h3>
+                    <p>Solución ehttps://github.com/18juzu/WEB-TILAPIA-PISCICULTURA/pull/15/conflict?name=peces.css&base_oid=14872e4ca60c91bc63cbdf2de6fbf3119ddd0efa&head_oid=58c8de571a5dc380c00d9718b00784630b8a8b41cológica para oxigenar y mantener el equilibrio del estanque.</p>
+                </div>
+            </div>
+        </section>
+    
+    
+     <!-- footer común -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo y Descripción -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-header">
+                            <img src="./assets/img/Captura de pantalla 2025-10-26 181942.png" alt="Tilapia Piscicultura">
+                            <h2>Tilapia Piscicultura</h2>
+                        </div>
+                        <p>Explora Más de Nosotros a través de Nuestras redes Sociales.</p>
+                    </div>
+                </div>
+
+                <!-- Explorar -->
+                <div class="footer-section">
+                    <h2>Explora</h2>
+                    <ul class="footer-links">
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Proyectos Asesorados</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <div class="social-links">
+                         <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h2>Contacto</h2>
+                    <div class="contact-info">
+                        <p>321 35 98 507</p>
+                        <p>tilapispiscicultura@gmail.com</p>
+                        <p>Huila</p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Tu Correo Electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+
+    <!-- Script para cargar header.html -->
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
+
+    <script>
+
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    </script>
+
+     </body>
+</html>

@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilapia Piscicultura</title>
-    <!-- Enlace al archivo CSS externo -->
+    <title>Inicio - Tilapia Piscicultura</title>
+    <!-- enlace al CSS -->
     <link rel="stylesheet" href="style.css">
-</head>
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
+    
+   
 <body>
-    
-    <!-- Menú de navegación -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Quiénes Somos</a></li>
-            <li><a href="#">Nuestros Peces</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Sección de video de fondo con nombre de empresa -->
-    <section class="video-hero">
-        <iframe class="video-background" 
-                src="https://www.youtube.com/embed/11vdTqKTGP0?autoplay=1&mute=1&loop=1&playlist=11vdTqKTGP0&controls=0&showinfo=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
-        <div class="video-overlay">
-            <h1 class="empresa-nombre">Tilapia Piscicultura</h1>
+
+      <!-- Placeholder para cargar el nav -->
+      <div id="nav-placeholder"></div>
+
+     <!--Placeholder para cargar videoheader-->
+      <div id="video-placeholder"></div>
+
+
+    <!-- sección bienvenido -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Bienvenido</h2>
+                    <p>En Tilapia Piscicultura nos dedicamos a la crianza sostenible de tilapia y trucha. Contamos con estanques especializados y asesoría técnica para proyectos en todo el país.</p>
+                </div>
+
+                <div class="about-image">
+                    <!-- imagen -->
+                    <img src="imagen-intro.jpg" alt="Estanques de tilapia" class="about-img">
+                </div>
+            </div>
         </div>
     </section>
+<<<<<<< HEAD
     <!-- Contenido principal -->
     <main>
         <section>
@@ -52,6 +58,120 @@
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2025 Piscícola El Manantial | Todos los derechos reservados</p>
+=======
+
+    <!-- galería de nuestros peces -->
+    <section class="products-section">  <!-- productos para galería -->
+        <div class="container">
+            <h2 class="section-title">Nuestros Peces</h2>
+            <div class="products-grid">  <!-- grid de imágenes -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="tilapia.jpg" alt="Tilapia" class="product-image">
+                    </div>
+
+                    <div class="product-info">
+                        <h3 class="product-name">Tilapia</h3>
+                        <p class="product-description">Peces de alta calidad, criados de forma sostenible.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="trucha.jpg" alt="Trucha" class="product-image">
+                    </div>
+
+                    <div class="product-info">
+                        <h3 class="product-name">Trucha</h3>
+                        <p class="product-description">Trucha arcoíris en estanques especializados.</p>
+                    </div>
+                </div>
+                <!-- se pueden añadir más -->
+            </div>
+        </div>
+    </section>
+
+    <!-- footer común -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo y Descripción -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-header">
+                            <img src="./assets/img/Captura de pantalla 2025-10-26 181942.png" alt="Tilapia Piscicultura">
+                            <h2>Tilapia Piscicultura</h2>
+                        </div>
+                        <p>Explora Más de Nosotros a través de Nuestras redes Sociales.</p>
+                    </div>
+                </div>
+
+                <!-- Explorar -->
+                <div class="footer-section">
+                    <h2>Explora</h2>
+                    <ul class="footer-links">
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Proyectos Asesorados</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h2>Contacto</h2>
+                    <div class="contact-info">
+                        <p>321 35 98 507</p>
+                        <p>tilapispiscicultura@gmail.com</p>
+                        <p>Huila</p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Tu Correo Electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+>>>>>>> main
     </footer>
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
+
+<!-- Script para cargar header.html -->
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
+
+      <script>
+
+       //Funcion para cargar videoheader
+       fetch('video.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('video-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargado vide:', error));
+      </script>
+
+    </body>
 </html>

@@ -1,59 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>coctacto - Empresa</title>
+    <title>Contacto - Tilapia Piscicultura</title>
+    <!-- enlace al CSS  -->
     <link rel="stylesheet" href="contacto.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="video.css">
+    
 </head>
+<a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría" class="whatsapp-flotante" target="_blank">
+  <img src="assets/img/WhatsApp.png" alt="WhatsApp">
+</a>
+
 <body>
 
-    <!-- Header con navegación -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1>LOGO</h1>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto.html"class="active">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-s
-    <!-- Contacto + Footer Unido -->
-    <footer class="footer" id="contacto">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-section">
-                    <h3>Contáctanos</h3>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="text" placeholder="Apellido" required>
-                        <input type="email" placeholder="Correo" required>
-                        <textarea placeholder="Mensaje" required></textarea>
-                        <button type="submit">Enviar Mensaje</button>
+        <!-- Placeholder para cargar el nav -->
+         <div id="nav-placeholder"></div>
+
+        <!--Placeholder para cargar videoheader-->
+         <div id="video-placeholder"></div>
+
+ <!--  texto + imagen -->
+<section class="info-section">
+  <div class="container">
+    <div class="info-grid">
+
+      <!-- izquierda Texto -->
+      <div class="info-text">
+        <h2>Contáctanos</h2>
+        <p>Estamos listos para ayudarte con tu proyecto de piscicultura. Al contactarnos recibirás:</p>
+        <ul class="benefits-list">
+          <li>Asesoría técnica especializada sobre cría y manejo de tilapia.</li>
+          <li>Cotizaciones de equipos y suministros.</li>
+          <li>Programas de visita técnica y soporte en sitio.</li>
+          <li>Planes de capacitación y optimización de producción.</li>
+        </ul>
+        <p class="note">
+          Completa el formulario y se abrirá tu cliente de correo.<br>
+          O escríbenos a <a href="mailto:info@tilapiapiscicultura.com">info@tilapiapiscicultura.com</a>.
+        </p>
+      </div>
+
+      <!-- derecha imagen -->
+      <div class="info-image">
+        <img src="./assets/img/imagen contacto.jpg" alt="Equipo Tilapia" class="info-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <!-- formulario mejorado y enlazado a correo -->
+                    <section class="about-section">
+                     <div class="container">
+                        <div class="about-content2">
+                            <div class="about-center">
+                                <div class="about-text">
+                    <div class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
+                        <label for="name">Nombre</label>
+                        <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
+
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
+
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input id="phone" name="Telefono" type="tel" placeholder="‪+57 300 123 4567‬">
+
+                        <label for="message">Mensaje / Consulta</label>
+                        <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Enviar mensaje</button>
+                            <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                        </div>
                     </form>
                 </div>
+
+</section>
+
+   <!-- footer común -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo y Descripción -->
                 <div class="footer-section">
-                    <h3>Empresa</h3>
-                    <p>Comprometidos desde 2020</p>
-                    <p>Email: info@empresa.com</p>
-                    <p>Tel: +57 123 456 7890</p>
+                    <div class="footer-logo">
+                        <div class="logo-header">
+                            <img src="./assets/img/Captura de pantalla 2025-10-26 181942.png" alt="Tilapia Piscicultura">
+                            <h2>Tilapia Piscicultura</h2>
+                        </div>
+                        <p>Explora Más de Nosotros a través de Nuestras redes Sociales.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Empresa. Todos los derechos reservados.</p>
+
+                <!-- Explorar -->
+                <div class="footer-section">
+                    <h2>Explora</h2>
+                    <ul class="footer-links">
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Proyectos Asesorados</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h2>Contacto</h2>
+                    <div class="contact-info">
+                        <p>321 35 98 507</p>
+                        <p>tilapispiscicultura@gmail.com</p>
+                        <p>Huila</p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <input type="email" placeholder="Tu Correo Electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+    
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
-</html>
+    <!-- Script para cargar header.html -->
+  <script>
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            // Arreglo para .active
+            const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');  // Toma el href del enlace
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => console.error('Error cargando nav:', error));
+</script>
+        
+        <script>
 
+        // Funcion pra cargar el videoheader
+        fetch('video.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('video-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando video:', error));
+    
+             </script>
+
+     </body>
+</html>
 
 
