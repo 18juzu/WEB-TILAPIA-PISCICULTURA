@@ -1,191 +1,150 @@
 # Proyecto Tilapia Piscicultura - README
 
-## Introducción
-Bienvenidos al proyecto "Tilapia Piscicultura", un sitio web desarrollado por un equipo de desarrolladores. Este README detalla las responsabilidades de cada grupo, las tareas pendientes, las fechas de entrega, y las instrucciones para colaborar usando Git y GitHub. El objetivo es avanzar en las interfaces para la clase y cumplir con las expectativas del cliente y el profesor.
+**Fecha límite:** **VIERNES 7 DE NOVIEMBRE – 11:59 PM**  
+**Entrega al profesor:** **SÁBADO 8 DE NOVIEMBRE – 7:00 AM **  
 
-Cumplir con las fechas estimuladas de entrega de cada uno de los grupos de desarrolladores para así mismo entregar avances al cliente y profesor.
+---
+
+## Introducción
+Bienvenidos al proyecto **Tilapia Piscicultura**, un sitio web desarrollado por un equipo de 11 personas. Este README detalla las responsabilidades de cada grupo, las tareas pendientes, las fechas de entrega y las instrucciones para colaborar usando **Git y GitHub**.
+
+**Objetivo:**  
+- Avanzar en las interfaces según **Figma** y los **nuevos requerimientos del cliente**  
+- Cumplir con las expectativas del profesor  
+- Presentar una **adelanto de la pagina funcional** el sábado  
+
+> **Cumplir con la fecha es obligatorio** para no afectar la nota grupal.
+
+---
 
 ## Estructura del Equipo
-- **Grupo 1: Header con Video (Yobany - Clareth)**  
-  Rama: `grupo1-header`
 
-- **Grupo 2: Menú de Navegación Funcional (Juan David - Zarhy Peña)**  
-  Rama: `grupo2-menu`
-
-- **Grupo 3: Sección "Nosotros" (Juan Manuel - Santiago Gonzales)**  
-  Rama: `grupo3-nosotos`
-
-- **Grupo 4: Sección "Nuestros Peces" y Galería (Yoinner - Rafael)**  
-  Rama: `grupo4-peces`
-
-- **Grupo 5: Sección "Contacto" y Footer de las demás Secciones (Julian Mendez - Diego Lozano)**  
-  Rama: `grupo5-contacto`
-
-## Tareas y Avances
-
-### 1. Sección "Inicio"
-**Descripción:** Modificar la descripción de "Bienvenido" agregando una imagen a su derecha, añadir imágenes con descripciones como abrebocas para el usuario, y aplicar los colores de Figma. (Julian Suaza) se encargará de esta sección.
-
-**Pasos para subir a GitHub:**
-- Abre tu editor (VS Code) en la carpeta del proyecto.
-- Abre la terminal (Ctrl + `).
-- Escribe `git pull origin main` para traer actualizaciones de main.
-- Escribe `git checkout nombre de la rama` para cambiar a tu rama.
-- Si hay cambios nuevos en main, escribe `git merge main` para juntarlos (arregla choques si aparecen abriendo archivos y eligiendo qué guardar).
-- Edita los archivos (HTML, CSS) con los cambios.
-- Escribe `git add .` para guardar tus cambios.
-- Escribe `git commit -m "Añadí imágenes y descripción en Inicio"` para etiquetar.
-- Escribe `git push origin nombre de la rama` para subir. Si falla, haz `git pull origin nombre de la rama` y arregla choques antes de push.
-- Descarga Live Server (Extensiones > Live Server > Install) y prueba clic derecho en `index.html` > Open with Live Server.
-
-**Nota:** Al terminar cada seccion, se añadio un script de JavaScript. Este script se encarga de traer el nav y el video de otros archivos (nav.html, video.html) y pone un color verde en el menú para mostrar dónde estás. Los siguientes script son:
-
-- Para el archivo nav.html se usa:
-  <script>
-      fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('nav-placeholder').innerHTML = data;
-              const currentPage = window.location.pathname.split('/').pop();
-              const links = document.querySelectorAll('.nav-menu a');
-              links.forEach(link => {
-                  const linkPage = link.getAttribute('href');
-                  if (linkPage === currentPage) {
-                      link.classList.add('active');
-                  }
-              });
-          })
-          .catch(error => console.error('Error cargando nav:', error));
-  </script>
-  ```
-- Para el archivo video.html se usa:
-  ```html
-  <script>
-      fetch('video.html')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('video-placeholder').innerHTML = data;
-          })
-          .catch(error => console.error('Error cargando video:', error));
-  </script>
-  ```
-- **Cuidado:** No toquen ni modifiquen estos scripts. Solo se modificara con permisos de (Julian Suaza) por posibles conflictos al compilar el código , solo de esa forma se ajustaran. Si los cambian, pueden romper el nav/video no aparecerán. Déjenlos como están y trabajen solo en HTML y CSS.
-
+| Grupo | Integrantes | Rama Git |
+|-------|-------------|----------|
+| **Grupo 1** | Yobany Fierro – Clareth | `grupo1-header` |
+| **Grupo 2** | Juan Garzón – Zhary Peña | `grupo2-menu` |
+| **Grupo 3** | Juan Manuel Marín – Santiago González | `grupo3-nosotros` |
+| **Grupo 4** | Yhoinner – Santiago Salazar | `grupo4-peces` |
+| **Grupo 5** | Julián Méndez – Diego Lozano | `grupo5-contacto` |
 
 ---
 
-### 2. Sección "Nosotros"
-**Descripción:** Modificar los colores según Figma, añadir visión, misión, valores, descripción de servicios con imagen, imágenes de productos con descripciones pequeñas, e historia de la empresa (información proporcionada por Julian Suaza). Sin animaciones en JavaScript por ahora.
-Remplazar el Apartado de Nuestros Servicios por "Transparencia" agregando una descripción y un video que se les asignara.
+## Tareas y Requerimientos
 
-**Pasos para subir a GitHub:**
-- Abre tu editor en la carpeta del proyecto.
-- Abre la terminal.
-- Escribe `git pull origin main` para actualizar.
-- Escribe `git checkout grupo3-nosotos` para entrar a tu rama.
-- Si hay cambios en main, escribe `git merge main` (arregla choques si aparecen).
-- Edita `nosotros.html` y `style.css` con los cambios.
-- Escribe `git add .` para guardar.
-- Escribe `git commit -m "Añadí visión, misión y productos en Nosotros"` para etiquetar.
-- Escribe `git push origin grupo3-nosotos` para subir. Si falla, haz `git pull origin grupo3-nosotos` y arregla antes.
-- Descarga Live Server y prueba clic derecho en `nosotros.html` > Open with Live Server.
+### 1. Grupo 1 – Header con Video  
+**Yobany Fierro – Clareth**  
+**Rama:** `grupo1-header`  
 
-**Nota:** Al final de su sección hay un script de JavaScript (igual que en Inicio) para traer el nav y video. No lo toquen, solo se ajusta con permisos. Trabajen en HTML y CSS.
+**Tarea:**  
+- **Ya finalizaron su trabajo con éxito**  
+- **Esperar nuevos requerimientos** → **No hacer nada por ahora**  
 
-**Fecha de entrega:** Viernes 24 de octubre.
+**Fecha de entrega:** **VIERNES 7 NOV – 11:59 PM** (solo espera)
 
 ---
 
-### 3. Sección "Contacto"
-**Descripción:** Añadir descripción sobre qué encuentra al contactar, imagen a la derecha, mejorar el formulario (moderno, enlazado a un correo), cambiar colores según Figma, y estructurar el footer como en Figma.
+### 2. Grupo 2 – Menú de Navegación  
+**Juan Garzón – Zhary Peña**  
+**Rama:** `grupo2-menu`  
 
-**Pasos para subir a GitHub:**
-- Abre tu editor en la carpeta.
-- Abre la terminal.
-- Escribe `git pull origin main` para actualizar.
-- Escribe `git checkout grupo5-contacto` para entrar.
-- Si hay cambios, escribe `git merge main` (arregla choques si aparecen).
-- Edita `contacto.html` y CSS.
-- Escribe `git add .` para guardar.
-- Escribe `git commit -m "Mejoré formulario y footer en Contacto"` para etiquetar.
-- Escribe `git push origin grupo5-contacto` para subir. Si falla, haz `git pull` y arregla.
-- Descarga Live Server y prueba clic derecho en `contacto.html` > Open with Live Server.
+**Requerimientos:**  
+1. Ubicar el **menú dentro del header** de forma **estática en todas las secciones**  
+2. Cambiar el **color del menú** según **Figma** (verde marino `#006400`, azul marino `#000080`)  
+3. **Resaltar la sección actual** (ej: color verde cuando estés en “Nosotros”)  
 
-**Nota:**Al final de su sección hay un script de JavaScript al final. No lo toquen, solo se modifica con permisos. Trabajen en HTML y CSS.
+> **Modelo a seguir:** https://www.voicemod.net/en/voice-changer/ (menú fijo arriba)
 
-**Fecha de entrega:** Sábado 25 de octubre.
+**Fecha de entrega:** **VIERNES 7 NOV – 11:59 PM**
 
 ---
 
-### 4. Menú de Navegación
-**Descripción:** Modificar estructura en `nav.html` y `nav.css` según Figma, agregar bordes redondeados, dimensiones, e integrarlo encima del header.
+### 3. Grupo 3 – Sección "Nosotros"  
+**Juan Manuel Marín – Santiago González**  
+**Rama:** `grupo3-nosotros`  
 
-**Pasos para subir a GitHub:**
-- Abre tu editor en la carpeta.
-- Abre la terminal.
-- Escribe `git pull origin main` para actualizar.
-- Escribe `git checkout grupo2-menu` para entrar.
-- Si hay cambios, escribe `git merge main` (arregla choques si aparecen).
-- Edita `nav.html` y `nav.css`.
-- Escribe `git add .` para guardar.
-- Escribe `git commit -m "Ajusté nav según Figma"` para etiquetar.
-- Escribe `git push origin grupo2-menu` para subir. Si falla, haz `git pull` y arregla.
-- Descarga Live Server y prueba clic derecho en `index.html` > Open with Live Server.
+**Requerimientos:**  
+- **Alimentar toda la sección** con la información del **documento Word** que Julian Suaza proporciono  
+- Incluir:  
+  - ¿Quiénes Somos?  
+  - Visión y Misión  
+  - Nuestros Valores  
+  - Nuestros Servicios (con botón a Contacto)  
+  - Nuestra Historia (línea de tiempo)  
+  - **Transparencia** (nueva mini-sección con texto y video)  
 
-**Nota:** Si al momento de revisar los cambios n el navegador no aparecen, no duden en contactar a Julian suaza ya que podria ser problemas del scritp.
+> **No toquen el `<script>` al final** (carga nav/video). Solo yo lo ajusto.
 
-**Fecha de entrega:** Domingo 26 de octubre.
-
----
-
-### 5. Header con Video
-**Descripción:** Integrar nuevo video (proporcionado por Julian Suaza), mejorar el título, y estar atentos a recomendaciones del cliente/profesor (posible cambio a galería).
-
-**Pasos para subir a GitHub:**
-- Abre tu editor en la carpeta.
-- Abre la terminal.
-- Escribe `git pull origin main` para actualizar.
-- Escribe `git checkout grupo1-header` para entrar.
-- Si hay cambios, escribe `git merge main` (arregla choques si aparecen).
-- Edita `video.html` y `video.css`.
-- Escribe `git add .` para guardar.
-- Escribe `git commit -m "Añadí nuevo video y título"` para etiquetar.
-- Escribe `git push origin grupo1-header` para subir. Si falla, haz `git pull` y arregla.
-- Descarga Live Server y prueba clic derecho en `index.html` > Open with Live Server.
-
-**Nota del líder:** Si al momento de revisar los cambios en el navegador no aparecen, no duden en contactar a Julian suaza ya que podria ser problemas del scritp.
-
-**Fecha de entrega:** Domingo 26 de octubre.
+**Fecha de entrega:** **VIERNES 7 NOV – 11:59 PM**
 
 ---
 
-### 6. Sección "Nuestros Peces"
-**Descripción:** Poner al día la sección (subir lo pendiente). Asi Julian Suaza ajustará tras aprobación y dará nuevas tareas.
+### 4. Grupo 4 – Sección "Peces"  
+**Yhoinner – Santiago Salazar**  
+**Rama:** `grupo4-peces`  
 
-**Pasos para subir a GitHub:**
-- Abre tu editor en la carpeta.
-- Abre la terminal.
-- Escribe `git pull origin main` para actualizar.
-- Escribe `git checkout grupo4-peces` para entrar.
-- Si hay cambios, escribe `git merge main` (arregla choques si aparecen).
-- Edita `peces.html` y CSS.
-- Escribe `git add .` para guardar.
-- Escribe `git commit -m "Subí sección Peces"` para etiquetar.
-- Escribe `git push origin grupo4-peces` para subir. Si falla, haz `git pull` y arregla.
-- Descarga Live Server y prueba clic derecho en `peces.html` > Open with Live Server.
+**Requerimientos:**  
+1. **Galería en la mitad de la seccion (centrada)** → Convertir en **carrusel de máximo 5 elementos**  
+2. **Incluir 1 video en el carrusel** (mismo tamaño que las fotos)  
+3. **Cada elemento con descripción pequeña**  
+4. **En total serian 3 contenedores dentro de la misma seccion**  
+   - **1ra:** Texto sobre tipo de tilapia + **imagen a la derecha**  
+   - **2da:** Carrusel (galería)  
+5. **Opcional:** En el último contenedor, agregar un recordatorio: *“¿Por qué elegirnos?”* 
 
-**Nota:** Al final de su sección hay un script de JavaScript al final. No lo toquen, solo se modifica con permisos. Trabajen en HTML y CSS.
+> Julian Suaza les proporcionara las **imagenes, texto y video.**
 
-**Fecha de entrega:** Domingo 26 de octubre.
+**Fecha de entrega:** **VIERNES 7 NOV – 11:59 PM**
 
 ---
 
-## Notas Importantes
-- **Fechas del 26 de octubre:** Las entregas del domingo 26 reflejan el compromiso asumido con los grupos 1 y 4, a quienes se le informo al profesor sobre retrasos.
-- **Reuniones:** Cada grupo se reunirá conmigo (Julian Suaza) la noche de su fecha de entrega para mostrar avances y discutir cambios.
-- **Soporte:** Si tienen problemas o dudas, contáctenme directamente.
-- **Recursos útiles:** https://getbootstrap.com/ (para estilos y ejemplos).
-- **Live Server:** Descárguenlo en VS Code (Extensiones > Live Server > Install) para visualizar haciendo clic derecho en los archivos HTML.
+### 5. Grupo 5 – Sección "Contacto" + Footer  
+**Julián Méndez – Diego Lozano**  
+**Rama:** `grupo5-contacto`  
+
+**Requerimientos:**  
+1. **Alinear descripción + formulario + imagen** (grid, ordenado)  
+2. **Centrar formulario** con **color llamativo** (azul #003464ff)  
+3. **Botón WhatsApp flotante** (vínculo directo a número)  
+4. **Añadir footer completo** en **TODAS las secciones**  
+
+> Julian Suaza Proporcionara el **número de WhatsApp**.
+
+**Fecha de entrega:** **VIERNES 7 NOV – 11:59 PM**
+
+---
+
+## Comandos Git (usar todos los días)
+
+```bash
+# 1. Actualizar todo
+git pull origin main
+
+# 2. Ir a tu rama
+git checkout grupoX-tu-nombre
+
+# 3. Juntar cambios de main (si hay)
+git merge main
+
+# 4. Guardar cambios
+git add .
+git commit -m "Descripción clara de lo que hice"
+
+# 5. Subir
+git push origin grupoX-tu-nombre
+
+**NOTA:**
+
+No toquen los <script> al final de cada página → Solo yo (Julián Suaza) los ajusto
+
+**Usen el Servidor en vivo:** Descárguenlo en VS Code → clic derecho en HTML → Abrir con Live Server
+
+**Reuniones de apoyo:**
+
+Julian Suaza Estara haciendo salas por meet para guiarlos en lo que no entiendan
+Horario: Jueves y Viernes – 8:40 PM 
+Enlace: Se envía por WhatsApp
 
 
+**Soporte:** Escribir a Julian Suaza por WhatsApp si presentan dudas o problemas.
 
+**Suerte Ingenieros !!! :)**
