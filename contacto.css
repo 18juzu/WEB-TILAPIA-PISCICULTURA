@@ -41,6 +41,14 @@ body {
 .info-section {
   padding: 80px 20px;
   background: #f7faf7;
+        padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 120px auto 40px auto; /* ¡ESPACIO ARRIBA PARA EL MENÚ! */
+  position: relative;
+  overflow: hidden;
 }
 .info-grid {
   display: grid;
@@ -72,6 +80,18 @@ body {
 
 
 /* formulario moderno */
+
+.about-section {
+        padding: 80px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 120px auto 40px auto; /* ¡ESPACIO ARRIBA PARA EL MENÚ! */
+  position: relative;
+  overflow: hidden;
+}
+
 .contact-form {
   max-width: 600px;
   margin: 0 auto;

@@ -8,6 +8,39 @@
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
     
+<!-- JS DEL MENÚ (EN CADA PÁGINA) -->
+<script>
+  // Esperar a que el nav se cargue
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          hamburger.classList.toggle('active');
+        });
+
+        // Cerrar al tocar enlace
+        document.querySelectorAll('.mobile-links a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('active');
+          });
+        });
+
+        // RESALTAR PÁGINA ACTUAL
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
+          if (link.getAttribute('href') === current) {
+            link.classList.add('active');
+          }
+        });
+      }
+    }, 100); // Pequeño delay para que fetch termine
+  });
+</script>
 
 <body>
         <!-- Placeholder para cargar el nav -->

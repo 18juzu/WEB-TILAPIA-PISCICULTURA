@@ -1,29 +1,81 @@
- <!-- header con navegación -->
- <header class="header">
-      <div class="container">
-          <nav class="menu">
-           <!-- Logo o nombre -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nav - Tilapia Piscicultura</title>
+  <link rel="stylesheet" href="nav.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-         <div class="logo">Tilapia Piscicultura</div>
+  <!-- MENÚ FIJO -->
+  <nav class="navbar">
+    <div class="container-nav">
+
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <span class="logo-text">Tilapia Piscicultura</span>
+      </a>
+
+      <!-- MENÚ DESKTOP -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+        <li><a href="peces.html" class="nav-link">Peces</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+      </ul>
 
 
+      <!-- HAMBURGUESA -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-            <!-- ☰ menu hamburguesa para activar menú en móviles -->
+    </div>
+  </nav>
 
-              <input type="checkbox" id="menu-toggle">
-                 <label for="menu-toggle" class="menu-icon">☰</label>
+  <!-- MENÚ MÓVIL (DENTRO DEL NAV) -->
+  <div class="mobile-menu">
+    <ul class="mobile-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="peces.html">Peces</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </div>
 
-                     <!--Enlaces del menú -->
+  <!-- JS FUNCIONANDO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.querySelector('.mobile-menu');
 
-                       <ul class="menu-links">
-                            <li><a href="index.html" class="active">Inicio</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="peces.html">Peces</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
+      // ABRIR/CERRAR MENÚ
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+      });
 
-                        </ul>
-             </nav>
-         </div>
-    </header>
-    <!-- fin de nav - header -->
-    
+      // CERRAR AL TOCAR ENLACE
+      document.querySelectorAll('.mobile-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+        });
+      });
+
+      // RESALTAR PÁGINA ACTUAL
+      const current = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
+        if (link.getAttribute('href') === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

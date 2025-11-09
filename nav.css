@@ -1,138 +1,159 @@
-/*Hace que el desplazamiento sea suave al hacer clic en los enlaces */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+/* === RESET Y FUENTE === */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #e0f7fa; /* Azul clarito de fondo */
-  color: #023047;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* Estructura principal del menú */
-.menu {
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f9ff;
+}
+.container-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0288d1; /* Azul principal */
-  color: white;
-  padding: 15px 30px;
-  border-radius: 15px;
+}
+
+/* === NAVBAR FIJO === */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
-  margin: 20px auto;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-/*Logo o nombre */
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-/*Lista de enlaces (modo escritorio) */
-.menu-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-/*Estilo base de los enlaces */
-.menu-links a {
+  max-width: 1200px;
+  background: #000;
   color: white;
+  padding: 14px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === LOGO === */
+.logo {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-text {
+  background: linear-gradient(90deg, #00f5ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === ENLACES DESKTOP === */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.nav-link {
+  color: #ccc;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 10px;
-  transition: background 0.3s, color 0.3s;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
-
-/* ✨ Efecto cuando pasas el mouse (hover) */
-.menu-links a:hover {
-  background-color: #0277bd; /* Azul más oscuro */
-  color: #b3e5fc; /* Azul claro al pasar */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
-
-/*Efecto cuando el enlace está activo o enfocado */
-.menu-links a.active,
-.menu-links a:focus,
-.menu-links a:active {
-  background-color: #01579b; /* Azul profundo */
-  color: #ffffff;
+.nav-link.active {
+  background: linear-gradient(90deg, #50d386, #50d386);
+  color: #000;
+  font-weight: 700;
 }
 
 
-/*ESTILOS RESPONSIVOS PARA CELULAR Y TABLET */
 
-
-/* Ocultamos el checkbox y el icono hamburguesa ☰ por defecto */
-#menu-toggle {
+/* === HAMBURGUESA === */
+.hamburger {
   display: none;
-}
-
-/* Ícono del menú (solo visible en móvil) */
-.menu-icon {
-  display: none;
-  font-size: 1.8em;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
+  z-index: 1001;
 }
-
-/*Cuando la pantalla es más pequeña de 768px */
-@media (max-width: 768px) {
-  .menu {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 15px 20px;
-  }
-
-  /* Mostramos el icono hamburguesa☰ */
-  .menu-icon {
-    display: block;
-  }
-
-  /* Ocultamos los enlaces por defecto */
-  .menu-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #0288d1;
-    border-radius: 0 0 10px 10px;
-    margin-top: 10px;
-  }
-
-  /*Cuando el checkbox esté activado, mostramos los enlaces */
-  #menu-toggle:checked + .menu-icon + .menu-links {
-    display: flex;
-  }
-
-  /* Ajustamos tamaño del logo */
-  .logo {
-    font-size: 1.3em;
-  }
-
-  /* Enlaces centrados y más amplios */
-  .menu-links a {
-    text-align: center;
-    padding: 10px;
-  }
-
-  /* Hover adaptado a móvil */
-  .menu-links a:hover {
-    background-color: #0277bd;
-    color: #b3e5fc;
-  }
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
 }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
-/*  ESTILOS PARA LAS SECCIONES DE PRUEBA */
-
-section {
-  padding: 100px 20px;
+/* === MENÚ MÓVIL === */
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background: #111;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.mobile-links {
+  list-style: none;
   text-align: center;
-  background-color: #ffffff;
-  margin: 20px auto;
-  width: 80%;
+}
+.mobile-links li {
+  margin: 15px 0;
+}
+.mobile-links a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  padding: 12px;
   border-radius: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.mobile-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+.btn-mobile {
+  background: linear-gradient(90deg, #00f5ff, #00ff88);
+  color: #000 !important;
+  font-weight: 700;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .nav-links, .btn-gradient { display: none; }
+  .hamburger { display: flex; }
 }
