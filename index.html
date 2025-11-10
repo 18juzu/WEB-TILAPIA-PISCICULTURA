@@ -10,9 +10,9 @@
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
 
-     <!-- JS DEL MENÚ (EN CADA PÁGINA) -->
+     <!-- script para menu de la pagina -->
 <script>
-  // Esperar a que el nav se cargue
+  // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       const hamburger = document.querySelector('.hamburger');
@@ -24,7 +24,7 @@
           hamburger.classList.toggle('active');
         });
 
-        // Cerrar al tocar enlace
+        // cerrar al tocar enlace
         document.querySelectorAll('.mobile-links a').forEach(link => {
           link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
@@ -32,7 +32,7 @@
           });
         });
 
-        // RESALTAR PÁGINA ACTUAL
+        // resaltar seccion en donde esta
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
           if (link.getAttribute('href') === current) {

@@ -15,9 +15,9 @@
   <img src="assets/img/WhatsApp.png" alt="WhatsApp">
 </a>
 
-<!-- JS DEL MENÚ (EN CADA PÁGINA) -->
+   <!-- script para menu de la pagina -->
 <script>
-  // Esperar a que el nav se cargue
+  // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       const hamburger = document.querySelector('.hamburger');
@@ -29,7 +29,7 @@
           hamburger.classList.toggle('active');
         });
 
-        // Cerrar al tocar enlace
+        // cerrar al tocar enlace
         document.querySelectorAll('.mobile-links a').forEach(link => {
           link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
@@ -37,7 +37,7 @@
           });
         });
 
-        // RESALTAR PÁGINA ACTUAL
+        // resaltar seccion en donde esta
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
           if (link.getAttribute('href') === current) {
@@ -107,8 +107,9 @@
                         <label for="message">Mensaje / Consulta</label>
                         <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
 
+
                         <div class="form-actions">
-                            <button type="submit" class="btn-submit">Enviar mensaje</button>
+                          <button type="submit" class="btn-submit">Enviar mensaje</button>
                             <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
                         </div>
                     </div>

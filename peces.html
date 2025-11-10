@@ -8,9 +8,9 @@
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
     
-<!-- JS DEL MENÚ (EN CADA PÁGINA) -->
+   <!-- script para menu de la pagina -->
 <script>
-  // Esperar a que el nav se cargue
+  // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       const hamburger = document.querySelector('.hamburger');
@@ -22,7 +22,7 @@
           hamburger.classList.toggle('active');
         });
 
-        // Cerrar al tocar enlace
+        // cerrar al tocar enlace
         document.querySelectorAll('.mobile-links a').forEach(link => {
           link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
@@ -30,7 +30,7 @@
           });
         });
 
-        // RESALTAR PÁGINA ACTUAL
+        // resaltar seccion en donde esta
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
           if (link.getAttribute('href') === current) {
@@ -50,23 +50,43 @@
         <div id="video-placeholder"></div>
     
         
-     <!-- SECCIÓN 1 -->
-  <section class="seccion">
-    <img src="https://picsum.photos/500/300?random=1" alt="Tilapia" />
+     <!-- seccion 1 -->
+    <section class="info-section">
+  <div class="container">
+    <div class="info-grid">
+
+<!--texto al lado izquierdo-->
     <div class="texto">
       <h2>Sobre Tilapia Piscicultura: Expertos en Acuicultura Nacional</h2>
       <p>
         Desde 2020, Tilapia Piscicultura ofrece asesoría técnica a nivel nacional para proyectos independientes de tilapia en ciudades como Barranquilla, Santa Marta, Valledupar y Hobo (Huila), entre otras.
         Nos enfocamos en brindar soluciones personalizadas y sostenibles, colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.
       </p>
+
       <p>Sin oficinas fisicas, nos enfocamos en guiar emprendedores con soluciones personalizadas,
-         colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.</p>
+         colaborando con entidades especializadas en infraestructura y recursos químicos como OxyNova para tratamiento de aguas.
+
+        </p>
     </div>
+
+    <div class="image">
+         <img src="https://picsum.photos/500/300?random=1" alt="Tilapia" class="image" />
+    </div>
+</div>
     </section>
-    <!--NUEVA SECCIÓN DIFERENCIADORES -->
-        <section class="diferenciadores">
-            <img src="https://picsum.photos/400/400?random=5" alt="Asesorías piscícolas">
-            <div class="texto-dif">
+
+    <!-- seccion diferenciadores -->
+       <section class="diferenciadores-section">
+       <div class="container">
+       <div class="info-grid">
+
+        <!--imagen al lado izquierdo-->
+        <div class="image2">
+            <img src="https://picsum.photos/400/400?random=5" alt="Asesorías piscícolas" class="diferenciadores-img">
+            </div>
+
+            <!--texto al lado derecho-->
+            <div class="texto2">
                 <h2>Diferenciadores</h2>
                 <ul>
                     <li><strong>Asesorías integrales:</strong> biometría de peso, control de crecimiento, alimentación y dirección de equipos para un trabajo eficiente</li>
@@ -74,9 +94,11 @@
                     <li><strong>Sostenibilidad:</strong> uso de biofloc y Oxynova para entornos ecológicos y rentables.</li>
                 </ul>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!--NUEVA SECCIÓN PRODUCTOS -->
+        <!--seccion productos -->
         <section class="productos">
             <h2>Algunos De Nuestros Productos Son Los Siguientes</h2>
             <div class="grilla-productos">
@@ -93,7 +115,7 @@
                 <div class="tarjeta">
                     <img src="https://picsum.photos/200/200?random=8" alt="Oxynova">
                     <h3>Oxynova</h3>
-                    <p>Solución ehttps://github.com/18juzu/WEB-TILAPIA-PISCICULTURA/pull/15/conflict?name=peces.css&base_oid=14872e4ca60c91bc63cbdf2de6fbf3119ddd0efa&head_oid=58c8de571a5dc380c00d9718b00784630b8a8b41cológica para oxigenar y mantener el equilibrio del estanque.</p>
+                    <p>Solución al tratamiento de aguas en sistemas de acuicultura.</p>
                 </div>
             </div>
         </section>

@@ -8,9 +8,9 @@
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
 
-    <!-- JS DEL MENÚ (EN CADA PÁGINA) -->
+       <!-- script para menu de la pagina -->
 <script>
-  // Esperar a que el nav se cargue
+  // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       const hamburger = document.querySelector('.hamburger');
@@ -22,7 +22,7 @@
           hamburger.classList.toggle('active');
         });
 
-        // Cerrar al tocar enlace
+        // cerrar al tocar enlace
         document.querySelectorAll('.mobile-links a').forEach(link => {
           link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
@@ -30,7 +30,7 @@
           });
         });
 
-        // RESALTAR PÁGINA ACTUAL
+        // resaltar seccion en donde esta
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
           if (link.getAttribute('href') === current) {
@@ -40,7 +40,7 @@
       }
     }, 100); // Pequeño delay para que fetch termine
   });
-</script> 
+</script>
     
 
 <body>
@@ -146,7 +146,7 @@
     <section class="transparencia-banner">
         <div class="container">
             <div class="transparencia-content">
-                <div class="transparenia-text">
+                <div class="transparencia-text">
                     <h2>Transparencia</h2>
                     <p>Invertir en tilapia tiene sus retos, y en Tilapia Piscicultura somos honestos: puedes enfrentar mortalidad, fallas de energía, calidad de agua o cambios climáticos. Pero estamos contigo: analizamos cada problema, diseñamos planes de respaldo (corto, mediano y largo plazo) y te acompañamos con comunicación activa para mitigar riesgos. ¡Tu éxito es nuestro compromiso!</p>
                     
