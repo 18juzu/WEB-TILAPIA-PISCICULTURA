@@ -1,3 +1,4 @@
+
 .hero {
     position: relative;
     height: 600px; /* Alto fijo para visibilidad */
@@ -46,6 +47,19 @@
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 5px;
+}
+
+/* quita parpadeo entre secciones */
+#video-placeholder {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+#video-placeholder.video-ready {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

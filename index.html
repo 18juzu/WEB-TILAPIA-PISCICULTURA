@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
-
+   
      <!-- script para menu de la pagina -->
 <script>
   // esperar a que el nav se cargue
@@ -43,9 +43,9 @@
     }, 100); // Pequeño delay para que fetch termine
   });
 </script>
-    
+ </head>
    
-<body>
+<body class="loading">
 
       <!-- Placeholder para cargar el nav -->
       <div id="nav-placeholder"></div>
@@ -127,9 +127,9 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/19rxY3ZbG4/" title="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw==" title="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp" title="whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -172,16 +172,38 @@
         .catch(error => console.error('Error cargando nav:', error));
 </script>
 
-      <script>
+  
+    <script>
 
-       //Funcion para cargar videoheader
-       fetch('video.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('video-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error cargado vide:', error));
-      </script>
+// Funcion para cargar el videoheader
+fetch('video.html')
+  .then(r => r.text())
+  .then(data => {
+    const placeholder = document.getElementById('video-placeholder');
+    placeholder.innerHTML = data;
 
-    </body>
+    const video = placeholder.querySelector('video');
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        // QUITAR FONDO NEGRO + MOSTRAR VIDEO
+        document.body.classList.remove('loading');
+        placeholder.classList.add('video-ready');
+      });
+
+      // SI TARDA, QUITAR DESPUÉS DE 1.2s (fallback)
+      setTimeout(() => {
+        document.body.classList.remove('loading');
+        placeholder.classList.add('video-ready');
+      }, 1200);
+    } else {
+      document.body.classList.remove('loading');
+      placeholder.classList.add('video-ready');
+    }
+  })
+  .catch(() => {
+    document.body.classList.remove('loading');
+    document.getElementById('video-placeholder').classList.add('video-ready');
+  });
+</script>
+
 </html>

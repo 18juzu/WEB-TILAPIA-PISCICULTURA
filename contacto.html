@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Tilapia Piscicultura</title>
+
     <!-- enlace al CSS  -->
     <link rel="stylesheet" href="contacto.css">
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
-    
-</head>
-<a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría" class="whatsapp-flotante" target="_blank">
-  <img src="assets/img/WhatsApp.png" alt="WhatsApp">
-</a>
 
-   <!-- script para menu de la pagina -->
+
+</head>
+
+  <!-- script para menu de la pagina -->
 <script>
   // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +48,12 @@
   });
 </script>
 
-<body>
+<body class="loading">
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría" class="whatsapp-flotante" target="_blank" title="whatsapp">
+    <img src="assets/img/WhatsApp.png" alt="WhatsApp">
+  </a>
 
         <!-- Placeholder para cargar el nav -->
          <div id="nav-placeholder"></div>
@@ -88,38 +92,35 @@
 </section>
 
 
-   <!-- formulario mejorado y enlazado a correo -->
-                    <section class="about-section">
-                     <div class="container">
-                        <div class="about-content2">
-                            <div class="about-center">
-                                <div class="about-text">
-                    <div class="contact-form" action="mailto:info@tilapiapiscicultura.com?subject=Contacto%20web" method="post" enctype="text/plain">
-                        <label for="name">Nombre</label>
-                        <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
+    <!-- formulario mejorado y enlazado a correo -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content2">
+          <div class="about-center">
+            <div class="about-text">
+              <form class="contact-form" action="mailto:herlajuzu@gmail.com?subject=Contacto%20web" method="post" enctype="text/plain">
+                <label for="name">Nombre</label>
+                <input id="name" name="Nombre" type="text" placeholder="Tu nombre completo" required>
 
-                        <label for="email">Correo electrónico</label>
-                        <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="Email" type="email" placeholder="tu@ejemplo.com" required>
 
-                        <label for="phone">Teléfono (opcional)</label>
-                        <input id="phone" name="Telefono" type="tel" placeholder="‪+57 300 123 4567‬">
+                <label for="phone">Teléfono (opcional)</label>
+                <input id="phone" name="Telefono" type="tel" placeholder="‪+57 300 123 4567‬">
 
-                        <label for="message">Mensaje / Consulta</label>
-                        <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
+                <label for="message">Mensaje / Consulta</label>
+                <textarea id="message" name="Mensaje" placeholder="Cuéntanos en qué podemos ayudar" rows="6" required></textarea>
 
-
-                        <div class="form-actions">
-                          <button type="submit" class="btn-submit">Enviar mensaje</button>
-                            <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                        </div>
-                    </form>
+                <div class="form-actions">
+                  <button type="submit" class="btn-submit">Enviar mensaje</button>
+                  <p class="privacy">Al enviar aceptas que usemos tus datos para responder tu consulta. <a href="#">Política de privacidad</a></p>
                 </div>
-
-</section>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
    <!-- footer común -->
     <footer class="footer">
@@ -146,9 +147,9 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/19rxY3ZbG4/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw=="><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/19rxY3ZbG4/" title="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tilapiapiscicultura?igsh=MXEybG55dDR4YmIxZw==" title="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5732598507?text=¡Hola! Quiero asesoría" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -169,10 +170,10 @@
         </div>
     </footer>
     
-    <!-- Font Awesome para los iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</body>
-    <!-- Script para cargar header.html -->
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Script para cargar nav.html -->
   <script>
     fetch('nav.html')
         .then(response => response.text())
@@ -181,27 +182,47 @@
             // Arreglo para .active
             const currentPage = window.location.pathname.split('/').pop();  // Toma solo el nombre del archivo (ej: index.html)
             const links = document.querySelectorAll('.nav-menu a');
-            links.forEach(link => {
+           links.forEach(link => {
                 const linkPage = link.getAttribute('href');  // Toma el href del enlace
                 if (linkPage === currentPage) {
-                    link.classList.add('active');
+            link.classList.add('active');
                 }
             });
         })
         .catch(error => console.error('Error cargando nav:', error));
 </script>
-        
-        <script>
+   <script>
 
-        // Funcion pra cargar el videoheader
-        fetch('video.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('video-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error cargando video:', error));
-    
-             </script>
+// Funcion para cargar el videoheader
+fetch('video.html')
+  .then(r => r.text())
+  .then(data => {
+    const placeholder = document.getElementById('video-placeholder');
+    placeholder.innerHTML = data;
+
+    const video = placeholder.querySelector('video');
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        // QUITAR FONDO NEGRO + MOSTRAR VIDEO
+        document.body.classList.remove('loading');
+        placeholder.classList.add('video-ready');
+      });
+
+      // SI TARDA, QUITAR DESPUÉS DE 1.2s (fallback)
+      setTimeout(() => {
+        document.body.classList.remove('loading');
+        placeholder.classList.add('video-ready');
+      }, 1200);
+    } else {
+      document.body.classList.remove('loading');
+      placeholder.classList.add('video-ready');
+    }
+  })
+  .catch(() => {
+    document.body.classList.remove('loading');
+    document.getElementById('video-placeholder').classList.add('video-ready');
+  });
+</script>
 
      </body>
 </html>
