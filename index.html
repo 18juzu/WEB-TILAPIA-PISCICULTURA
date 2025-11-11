@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
+     <link rel="stylesheet" href="animations/keyframes.css">
    
-     <!-- script para menu de la pagina -->
+</head>
+
+      <!-- script para menu de la pagina -->
+
 <script>
   // esperar a que el nav se cargue
   document.addEventListener('DOMContentLoaded', () => {
@@ -43,7 +47,6 @@
     }, 100); // Pequeño delay para que fetch termine
   });
 </script>
- </head>
    
 <body class="loading">
 
@@ -151,9 +154,23 @@
     </footer>
     <!-- Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/lib/gsap-register.js"></script>
+
+    <!-- Animation Scripts (ORDEN IMPORTANTE) -->
+    <script src="js/hero/headervideo-animation.js"></script>
+    <script src="js/nav/nav-menu-animations.js"></script>
+    <script src="js/sections/nosotros-animations.js"></script>
+    <script src="js/sections/products-animations.js"></script>
+    <script src="js/sections/imagen-secciones.js"></script>   <!-- HOVER IMÁGENES -->
+    <script src="js/sections/footer-animations.js"></script>
+     <script src="js/body-animations-pagina.js"></script>
 </body>
 
-<!-- Script para cargar header.html -->
+    <!-- Script para cargar header.html -->
   <script>
     fetch('nav.html')
         .then(response => response.text())
@@ -171,11 +188,11 @@
         })
         .catch(error => console.error('Error cargando nav:', error));
 </script>
-
   
-    <script>
+ <script>
+   // Funcion para cargar el videoheader
 
-// Funcion para cargar el videoheader
+   
 fetch('video.html')
   .then(r => r.text())
   .then(data => {
@@ -205,5 +222,6 @@ fetch('video.html')
     document.getElementById('video-placeholder').classList.add('video-ready');
   });
 </script>
+
 
 </html>

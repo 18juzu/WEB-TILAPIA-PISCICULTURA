@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="nosotros.css">
      <link rel="stylesheet" href="nav.css">
      <link rel="stylesheet" href="video.css">
-     <link rel="stylesheet" href="keyframes.css">
+     <link rel="stylesheet" href="animations/keyframes.css">
 
 </head>
     <!-- script para menu de la pagina -->
@@ -253,6 +253,20 @@
     
     <!-- Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/lib/gsap-register.js"></script>
+
+    <!-- Animation Scripts (ORDEN IMPORTANTE) -->
+    <script src="js/nav/nav-menu-animations.js"></script>
+    <script src="js/hero/headervideo-animation.js"></script>
+    <script src="js/sections/nosotros-animations.js"></script>
+    <script src="js/sections/mision-vision-animations.js"></script>  <!-- MISIÓN Y VISIÓN INTERACTIVAS -->
+    <script src="js/sections/imagen-secciones.js"></script>   <!-- HOVER IMÁGENES -->
+    <script src="js/sections/footer-animations.js"></script>
+    <script src="js/body-animations-pagina.js"></script>  <!-- FULL PAGE BODY ACTIVATOR -->
 </body>
 
 
