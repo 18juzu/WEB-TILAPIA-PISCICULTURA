@@ -155,6 +155,50 @@
           }
         );
       }
+
+      // Animate CTA button (Nosotros)
+      const ctaButton = document.querySelector('.cta-button');
+      if (ctaButton) {
+        gsap.fromTo(
+          ctaButton,
+          {
+            opacity: 0,
+            y: 20,
+            scale: 0.9,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            delay: 0.3,
+            scrollTrigger: {
+              trigger: productsSection || ctaButton,
+              start: 'top 75%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Hover effect on CTA button
+        ctaButton.addEventListener('mouseenter', function() {
+          gsap.to(this, {
+            duration: 0.3,
+            scale: 1.05,
+            y: -3,
+            ease: 'power2.out',
+          });
+        });
+
+        ctaButton.addEventListener('mouseleave', function() {
+          gsap.to(this, {
+            duration: 0.3,
+            scale: 1,
+            y: 0,
+            ease: 'power2.out',
+          });
+        });
+      }
     } catch (error) {
       console.warn('GSAP product animation error:', error);
       initIntersectionProductAnimations();
@@ -214,6 +258,36 @@
         entry.target.style.animation = 'fadeInLeft 0.5s ease-out forwards';
       }
     });
+
+    // Observe CTA button
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+      const ctaObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              entry.target.style.animation = 'fadeInUp 0.6s ease-out 0.3s forwards';
+              entry.target.style.animationFillMode = 'both';
+
+              // Add hover effect
+              entry.target.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) translateY(-3px)';
+                this.style.transition = 'transform 0.3s ease-out';
+              });
+
+              entry.target.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateY(0)';
+                this.style.transition = 'transform 0.3s ease-out';
+              });
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+
+      ctaObserver.observe(ctaButton);
+    }
   }
 
   // Initialize when ready
