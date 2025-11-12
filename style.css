@@ -134,7 +134,7 @@ body {
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px  rgba(6, 6, 6, 0.151);
 }
 
 .product-image-container {
@@ -150,6 +150,7 @@ body {
 
 .product-info {
     padding: 20px;
+    color:#666666;
 }
 
 .product-name {
@@ -212,7 +213,7 @@ body {
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
-    display: flex;
+    display: center;
     flex-direction: column;
     align-items: center;
 
@@ -316,7 +317,7 @@ body {
 }
 
 .values-list strong {
-    color: var(--primary-color);
+    color: black        
 }
 
 /* Timeline */

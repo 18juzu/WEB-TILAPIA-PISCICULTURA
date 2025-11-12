@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Empresa</title>
+    <title>Sobre Nosotros</title>
     <link rel="stylesheet" href="nosotros.css">
-     <link rel="stylesheet" href="nav.css">
-     <link rel="stylesheet" href="video.css">
-     <link rel="stylesheet" href="animations/keyframes.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="animations/keyframes.css">
 
 </head>
     <!-- script para menu de la pagina -->
@@ -26,32 +26,31 @@
 
         // cerrar al tocar enlace
         document.querySelectorAll('.mobile-links a').forEach(link => {
-          link.addEventListener('click', () => {
+        link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
             hamburger.classList.remove('active');
-          });
+        });
         });
 
         // resaltar seccion en donde esta
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav-link, .mobile-links a').forEach(link => {
-          if (link.getAttribute('href') === current) {
+        if (link.getAttribute('href') === current) {
             link.classList.add('active');
-          }
+        }
         });
-      }
+    }
     }, 100); // Pequeño delay para que fetch termine
-  });
+});
 </script>
- 
 
 <body class="loading">
 
     <!-- Placeholder para cargar el nav -->
-      <div id="nav-placeholder"></div>
+    <div id="nav-placeholder"></div>
 
     <!--Placeholder para cargar videoheader-->
-      <div id="video-placeholder"></div>
+    <div id="video-placeholder"></div>
 
     <!-- quiénes somos -->
     <section class="about-section">
@@ -62,9 +61,9 @@
                     <p>En Tilapia Piscicultura, una experta apasionada te guía en cada paso para hacer de tu proyecto de tilapia un negocio rentable. Desde 2020, ofrecemos asesorías personalizadas en sistemas biofloc, estudiando alimentación, oxígeno y biometría de peso para optimizar tu producción. Con comunicación activa, diseñamos planes de respaldo frente a emergencias como mortalidad o cambios climáticos, adaptándonos a tus necesidades en regiones como Barranquilla, Santa Marta y más, incluso con experiencia internacional. ¡Estamos aquí para que triunfes!</p>
                 </div>
 
-                 <div class="info-image">
+                <div class="info-image">
         <img src="./assets/img/1.jpeg" alt="Equipo Tilapia" class="info-img">
-      </div>
+        </div>
             </div>
         </div>
     </section>
@@ -116,7 +115,7 @@
                     <h4>Calidad</h4>
                     <p>Garantizamos tilapia saludable y procesos optimizados para tu éxito.</p>
                 </div>
-                 <div class="value-card">
+                <div class="value-card">
                     <div class="value-icon"></div>
                     <h4>Sostenibilidad</h4>
                     <p>Promovemos alimentación sostenible y planes de respaldo ecológicos.</p>
@@ -137,7 +136,7 @@
 
                 <div class="services-image">
                     <div class="image-placeholder">
-                        <span>Imagen Servicios</span>
+                        <img src="assets/WhatsApp Image 2025-11-12 at 2.03.59 AM.jpeg" alt="Nuestros Servicios">
                     </div>
                 </div>
             </div>
@@ -154,11 +153,12 @@
                     
                 </div>
 
-                <div class="transparencia-image">
-                    <div class="image-placeholder">
-                        <span>Imagen Servicios</span>
-                    </div>
-                </div>
+                <div class="image-placeholder">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/AQMMyATdszlifUSAwoB6kHeEeujzyppSaodxbCV-3-Tt0G0f4aFHLTAJp-ewbx-KDkghMkJCO27QzE_ogZ9VqM-ry4Dsmb9HYbMrnbHqVVzLnw.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>    
             </div>
         </div>
     </section>
@@ -197,6 +197,22 @@
                     <div class="timeline-content">
                         <h4>Alianzas</h4>
                         <p>Incorporación de Oxynova para tratamiento de aguas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Alianzas</h4>
+                        <p> Crecimiento a Hobo (Huila) y experiencia internacional.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h4>Alianzas</h4>
+                        <p>Seguimos creciendo contigo, adaptándonos a tu región.</p>
                     </div>
                 </div>
             </div>
