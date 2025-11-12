@@ -1,193 +1,94 @@
 /**
- * Hero Typing Animation (MEJORADO)
- * Creates a fluent, impactful letter-by-letter typing effect
+ * Hero Typing Animation - LIMPIO Y SIMPLE
+ * Escribe letra por letra sin errores
  * Features:
- *  - Variable speed with easing for natural feel
- *  - Cursor blink effect during typing
- *  - Smooth fade-in after complete
- *  - Runs after video loads and body transitions from loading state
+ *  - Escritura simple y clara
+ *  - Sin confusión de textos
+ *  - Velocidad constante
+ *  - Efecto final de brillo
  */
 
 (function() {
   'use strict';
 
   /**
-   * Types text character by character with cursor effect
-   * @param {HTMLElement} element - The element to type into
-   * @param {string} text - The text to type
-   * @param {Object} options - Configuration object
-   * @returns {Promise} Resolves when typing completes
+   * Tipea texto letra por letra de forma limpia
+   * @param {HTMLElement} element - Elemento a escribir
+   * @param {string} fullText - Texto completo a escribir
+   * @param {number} speed - Velocidad en ms por letra
+   * @returns {Promise}
    */
-  function typeText(element, text, options = {}) {
+  function typeText(element, fullText, speed = 50) {
     return new Promise((resolve) => {
-      if (!element) {
+      if (!element || !fullText) {
         resolve();
         return;
       }
 
-      const {
-        baseSpeed = 60,      // Velocidad base (ms/char) - MÁS RÁPIDO
-        variance = 20,       // Varianza de velocidad (ms)
-        cursorShow = true,   // Mostrar cursor parpadeante
-        cursorChar = '|',    // Carácter del cursor
-      } = options;
+      // Limpiar completamente el elemento
+      element.innerText = '';
+      element.style.whiteSpace = 'normal';
+      element.style.wordWrap = 'break-word';
+      element.style.maxWidth = '90%';
 
-      element.textContent = ''; // Clear existing content
-      let index = 0;
+      let currentText = '';
+      let charIndex = 0;
 
-      // Agregar cursor si está habilitado
-      if (cursorShow) {
-        element.style.position = 'relative';
-      }
-
-      const typeInterval = setInterval(() => {
-        if (index < text.length) {
-          // Agregar carácter
-          element.textContent += text[index];
-
-          // Agregar cursor después del carácter
-          if (cursorShow && index < text.length - 1) {
-            element.style.position = 'relative';
-          }
-
-          // Velocidad variable (acelera/desacelera naturalmente)
-          const randomVariance = (Math.random() - 0.5) * variance;
-          const nextSpeed = baseSpeed + randomVariance;
-
-          // Siguiente intervalo con velocidad variable
-          clearInterval(typeInterval);
-          setTimeout(() => {
-            index++;
-            if (index < text.length) {
-              typeInterval = setInterval(() => {
-                if (index < text.length) {
-                  element.textContent += text[index];
-                  index++;
-                } else {
-                  clearInterval(typeInterval);
-                  // Remover cursor y hacer fade
-                  if (cursorShow) {
-                    element.style.position = 'static';
-                  }
-                  // Agregar efecto de brillo final
-                  if (window.gsap) {
-                    window.gsap.to(element, {
-                      textShadow: '0 0 20px rgba(255, 255, 255, 0.6)',
-                      duration: 0.5,
-                      ease: 'power2.out',
-                      onComplete: () => {
-                        element.style.textShadow = 'none';
-                        resolve();
-                      },
-                    });
-                  } else {
-                    resolve();
-                  }
-                }
-              }, baseSpeed);
-            } else {
-              clearInterval(typeInterval);
-              resolve();
-            }
-          }, Math.max(nextSpeed, 30)); // Garantizar velocidad mínima
+      const type = () => {
+        if (charIndex < fullText.length) {
+          currentText += fullText[charIndex];
+          element.innerText = currentText;
+          charIndex++;
+          setTimeout(type, speed);
         } else {
-          clearInterval(typeInterval);
-          resolve();
+          // Animación final de brillo
+          if (window.gsap) {
+            window.gsap.to(element, {
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.6)',
+              duration: 0.5,
+              ease: 'power2.out',
+              onComplete: () => {
+                element.style.textShadow = 'none';
+                resolve();
+              },
+            });
+          } else {
+            resolve();
+          }
         }
-      }, baseSpeed);
+      };
+
+      type();
     });
   }
 
   /**
-   * Initializes the typing animation for hero section
-   * Runs sequentially: title first, then subtitle
+   * Inicializa la animación de typing
+   * Ejecuta: título → pausa → subtítulo
    */
   async function initTypingAnimation() {
-    // Get hero elements
     const title = document.querySelector('.hero-title');
     const subtitle = document.querySelector('.hero-subtitle');
 
-    // Fallback if elements don't exist
     if (!title && !subtitle) return;
 
     try {
-      // Store original text before clearing
-      const titleText = title?.textContent || '';
-      const subtitleText = subtitle?.textContent || '';
+      // Obtener el texto original
+      const titleText = title ? title.innerText : '';
+      const subtitleText = subtitle ? subtitle.innerText : '';
 
-      // Type title con velocidad variable (MÁS RÁPIDO Y FLUIDO)
+      // Escribir título
       if (title && titleText.length > 0) {
-        // Fade in suave antes de empezar
-        if (window.gsap) {
-          await new Promise((resolve) => {
-            window.gsap.fromTo(
-              title,
-              { opacity: 0 },
-              {
-                opacity: 1,
-                duration: 0.4,
-                ease: 'power2.inOut',
-                onComplete: resolve,
-              }
-            );
-          });
-        }
-
-        // Tipo título
-        await typeText(title, titleText, {
-          baseSpeed: 50,      // 50ms por char (MÁS RÁPIDO que antes 80ms)
-          variance: 15,       // Varianza para naturalidad
-          cursorShow: true,
-        });
-
-        // Pequeña pausa antes del subtítulo
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await typeText(title, titleText, 50); // 50ms por letra
+        await new Promise((resolve) => setTimeout(resolve, 500)); // Pausa entre título y subtítulo
       }
 
-      // Type subtitle after title completes
+      // Escribir subtítulo
       if (subtitle && subtitleText.length > 0) {
-        // Fade in suave
-        if (window.gsap) {
-          await new Promise((resolve) => {
-            window.gsap.fromTo(
-              subtitle,
-              { opacity: 0, y: 10 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.inOut',
-                onComplete: resolve,
-              }
-            );
-          });
-        }
-
-        // Tipo subtítulo
-        await typeText(subtitle, subtitleText, {
-          baseSpeed: 45,      // 45ms por char (MÁS RÁPIDO que antes 60ms)
-          variance: 12,       // Varianza menor para consistencia
-          cursorShow: true,
-        });
-
-        // Efecto final de brillo/highlight
-        if (window.gsap) {
-          window.gsap.to([title, subtitle], {
-            textShadow: '0 0 30px rgba(255, 255, 255, 0.4)',
-            duration: 0.6,
-            ease: 'power2.out',
-            onComplete: () => {
-              title.style.textShadow = 'none';
-              subtitle.style.textShadow = 'none';
-            },
-          });
-        }
+        await typeText(subtitle, subtitleText, 45); // 45ms por letra
       }
     } catch (error) {
-      console.warn('Typing animation error:', error);
-      // Restore text if animation fails
-      if (title) title.textContent = title.textContent;
-      if (subtitle) subtitle.textContent = subtitle.textContent;
+      console.warn('Error en typing animation:', error);
     }
   }
 
