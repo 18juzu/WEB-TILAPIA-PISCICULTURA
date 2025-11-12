@@ -161,6 +161,163 @@ body {
     color: var(--text-light);
 }
 
+/* CTA Button */
+.cta-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(30, 136, 229, 0.5);
+}
+
+/* Species Section */
+.species-section {
+    padding: 80px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.species-card {
+    background: var(--bg-light);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.species-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.species-icon-container {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.species-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.species-name {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.species-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Values Intro Section */
+.values-intro-section {
+    padding: 80px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.values-intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.values-intro-image {
+    position: relative;
+    width: 100%;
+}
+
+.values-intro-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.values-intro-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.values-intro-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.values-list strong {
+    color: var(--primary-color);
+}
+
 /* Timeline */
 .timeline {
     position: relative;
@@ -329,9 +486,14 @@ body {
 /* Responsive */
 @media (max-width: 968px) {
     .about-content, 
-    .products-grid, 
+    .products-grid,
+    .values-intro-content,
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    .species-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .timeline::before {
@@ -352,5 +514,30 @@ body {
 @media (max-width: 640px) {
     .hero-title {
         font-size: 2rem;
+    }
+
+    .species-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-intro-img {
+        height: 300px;
+    }
+
+    .values-intro-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
     }
 }

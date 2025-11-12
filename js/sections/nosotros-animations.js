@@ -49,7 +49,7 @@
     try {
       const gsap = window.gsap;
 
-      // About section main reveal
+      // About section main reveal (index + nosotros)
       const aboutSection = document.querySelector('.about-section');
       if (aboutSection) {
         gsap.fromTo(
@@ -69,6 +69,122 @@
             },
           }
         );
+      }
+
+      // Species section (index) - 4 especies con iconos
+      const speciesSection = document.querySelector('.species-section');
+      if (speciesSection) {
+        const speciesCards = speciesSection.querySelectorAll('.species-card');
+        gsap.fromTo(
+          speciesCards,
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.12,
+            scrollTrigger: {
+              trigger: speciesSection,
+              start: 'top 75%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Hover effect on species cards
+        speciesCards.forEach((card) => {
+          card.addEventListener('mouseenter', function() {
+            gsap.to(this, {
+              scale: 1.08,
+              y: -10,
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+
+          card.addEventListener('mouseleave', function() {
+            gsap.to(this, {
+              scale: 1,
+              y: 0,
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+        });
+      }
+
+      // Values intro section (index) - imagen + texto
+      const valuesIntroSection = document.querySelector('.values-intro-section');
+      if (valuesIntroSection) {
+        gsap.fromTo(
+          valuesIntroSection,
+          {
+            opacity: 0,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: valuesIntroSection,
+              start: 'top 75%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Animar imagen
+        const valuesImg = valuesIntroSection.querySelector('.values-intro-img');
+        if (valuesImg) {
+          gsap.fromTo(
+            valuesImg,
+            {
+              opacity: 0,
+              x: -50,
+              scale: 0.95,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              scale: 1,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: valuesIntroSection,
+                start: 'top 75%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
+        }
+
+        // Animar texto y lista de valores
+        const valuesList = valuesIntroSection.querySelectorAll('.values-list li');
+        if (valuesList.length > 0) {
+          gsap.fromTo(
+            valuesList,
+            {
+              opacity: 0,
+              x: 30,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.5,
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: valuesIntroSection,
+                start: 'top 75%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
+        }
       }
 
       // Mission/Vision sections

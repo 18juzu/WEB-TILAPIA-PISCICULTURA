@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     '.tarjeta img, ' +                 // Peces: tarjetas
     '.about-img, ' +                   // Index: bienvenido
     '.info-img, ' +                    // Contacto: info-section
+    '.species-icon, ' +                // Index: species-section iconos
+    '.values-intro-img, ' +             // Index: values-intro-section imagen
     'img[src*="assets"]'                // Cualquier imagen en assets
   );
 
