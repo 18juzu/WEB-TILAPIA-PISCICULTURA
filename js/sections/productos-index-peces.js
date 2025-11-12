@@ -1,8 +1,9 @@
 /**
- * Products/Gallery Scroll Animations
- * Adds scroll-triggered reveal and hover effects for product cards
+ * Products/Gallery Scroll Animations - OPTIMIZADO
+ * Adds scroll-triggered reveal and hover effects for product cards ONLY
+ * Secciones permanecen estáticas, sin animación
  * Works on: index.html (.products-section) and peces.html (.productos)
- * Features: Staggered reveal, card hover zoom, interactive effects
+ * Features: Staggered reveal cards, hover SIN ZOOM (como especies), interactive effects
  */
 
 (function() {
@@ -45,34 +46,17 @@
     try {
       const gsap = window.gsap;
 
-      // Products section container reveal
-      const productsSection = document.querySelector('.products-section, .productos, .diferenciadores-section');
-      if (productsSection) {
-        gsap.fromTo(
-          productsSection,
-          {
-            opacity: 0,
-            y: 30,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            scrollTrigger: {
-              trigger: productsSection,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            },
-          }
-        );
-      }
+      // ==========================================
+      // IMPORTANTE: Las secciones NO se animan
+      // Solo las tarjetas individuales se animan
+      // ==========================================
 
-      // Product cards staggered reveal + hover
-      const productCards = document.querySelectorAll(
-        '.product-card, .products-grid > div, [class*="product"], [class*="card"]'
-      );
-
+      // Product cards staggered reveal (TARJETAS SOLO)
+      // Para index.html
+      const productCards = document.querySelectorAll('.product-card');
       if (productCards.length > 0) {
+        const productsSection = document.querySelector('.products-section');
+        
         gsap.fromTo(
           productCards,
           {
@@ -85,56 +69,87 @@
             y: 0,
             scale: 1,
             duration: 0.6,
-            stagger: 0.1,
+            stagger: 0.12,
             scrollTrigger: {
-              trigger: productsSection || productCards[0],
-              start: 'top 75%',
+              trigger: productsSection,
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
         );
 
-        // Add hover zoom effect to each card
+        // Hover effect SIN ZOOM - Solo lift/sombra (como especies)
         productCards.forEach((card) => {
           card.addEventListener('mouseenter', function() {
             gsap.to(this, {
-              scale: 1.08,
+              y: -8,
+              boxShadow: '0 12px 30px rgba(0, 0, 0, 0.15)',
               duration: 0.3,
               ease: 'power2.out',
-              overwrite: 'auto',
             });
-
-            // Animate shadow or overlay if exists
-            const overlay = this.querySelector('[class*="overlay"], [class*="shadow"]');
-            if (overlay) {
-              gsap.to(overlay, {
-                opacity: 1,
-                duration: 0.3,
-              });
-            }
           });
 
           card.addEventListener('mouseleave', function() {
             gsap.to(this, {
-              scale: 1,
+              y: 0,
+              boxShadow: '0 5px 20px rgba(6, 6, 6, 0.151)',
               duration: 0.3,
               ease: 'power2.out',
-              overwrite: 'auto',
             });
-
-            const overlay = this.querySelector('[class*="overlay"], [class*="shadow"]');
-            if (overlay) {
-              gsap.to(overlay, {
-                opacity: 0,
-                duration: 0.3,
-              });
-            }
           });
         });
       }
 
-      // Animate product info/description on scroll
-      const productInfos = document.querySelectorAll('[class*="product-info"], [class*="description"]');
+      // Tarjetas para peces.html (.tarjeta)
+      const tarjetas = document.querySelectorAll('.tarjeta');
+      if (tarjetas.length > 0) {
+        const productosSection = document.querySelector('.productos');
+
+        gsap.fromTo(
+          tarjetas,
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.12,
+            scrollTrigger: {
+              trigger: productosSection,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Hover effect SIN ZOOM - Solo lift/sombra
+        tarjetas.forEach((tarjeta) => {
+          tarjeta.addEventListener('mouseenter', function() {
+            gsap.to(this, {
+              y: -8,
+              boxShadow: '0 12px 30px rgba(0, 0, 0, 0.2)',
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+
+          tarjeta.addEventListener('mouseleave', function() {
+            gsap.to(this, {
+              y: 0,
+              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+              duration: 0.3,
+              ease: 'power2.out',
+            });
+          });
+        });
+      }
+
+      // Animate product info/description on scroll (si existen)
+      const productInfos = document.querySelectorAll('.product-info');
       if (productInfos.length > 0) {
         gsap.fromTo(
           productInfos,
@@ -148,7 +163,7 @@
             duration: 0.5,
             stagger: 0.08,
             scrollTrigger: {
-              trigger: productsSection || productInfos[0],
+              trigger: document.querySelector('.products-section'),
               start: 'top 70%',
               toggleActions: 'play none none none',
             },
@@ -156,46 +171,48 @@
         );
       }
 
-      // Animate CTA button (Nosotros)
-      const ctaButton = document.querySelector('.cta-button');
-      if (ctaButton) {
-        gsap.fromTo(
-          ctaButton,
-          {
-            opacity: 0,
-            y: 20,
-            scale: 0.9,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.6,
-            delay: 0.3,
-            scrollTrigger: {
-              trigger: productsSection || ctaButton,
-              start: 'top 75%',
-              toggleActions: 'play none none none',
+      // Animate CTA buttons (todos los que tengan clase .cta-button)
+      const ctaButtons = document.querySelectorAll('.cta-button');
+      if (ctaButtons.length > 0) {
+        ctaButtons.forEach((btn) => {
+          gsap.fromTo(
+            btn,
+            {
+              opacity: 0,
+              y: 20,
+              scale: 0.9,
             },
-          }
-        );
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.6,
+              delay: 0.2,
+              scrollTrigger: {
+                trigger: btn.closest('section') || btn,
+                start: 'top 75%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
 
-        // Hover effect on CTA button
-        ctaButton.addEventListener('mouseenter', function() {
-          gsap.to(this, {
-            duration: 0.3,
-            scale: 1.05,
-            y: -3,
-            ease: 'power2.out',
+          // Hover effect en botones
+          btn.addEventListener('mouseenter', function() {
+            gsap.to(this, {
+              duration: 0.3,
+              y: -3,
+              boxShadow: '0 12px 30px rgba(30, 136, 229, 0.5)',
+              ease: 'power2.out',
+            });
           });
-        });
 
-        ctaButton.addEventListener('mouseleave', function() {
-          gsap.to(this, {
-            duration: 0.3,
-            scale: 1,
-            y: 0,
-            ease: 'power2.out',
+          btn.addEventListener('mouseleave', function() {
+            gsap.to(this, {
+              duration: 0.3,
+              y: 0,
+              boxShadow: '0 8px 20px rgba(30, 136, 229, 0.3)',
+              ease: 'power2.out',
+            });
           });
         });
       }
@@ -209,40 +226,30 @@
    * IntersectionObserver fallback for product animations
    */
   function initIntersectionProductAnimations() {
-    // Observe products section
-    const productsSection = document.querySelector('.products-section, .productos, .diferenciadores-section');
-    if (productsSection) {
-      animUtils.observe('.products-section, .productos, .diferenciadores-section', (entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-        }
-      });
-    }
+    // Observe SOLO las tarjetas (.product-card y .tarjeta)
+    // NO las secciones
 
-    // Observe product cards with stagger effect via CSS/JS
-    const productCards = document.querySelectorAll(
-      '.product-card, .products-grid > div, [class*="product"], [class*="card"]'
-    );
-
-    const observer = new IntersectionObserver(
+    // Product cards (index.html)
+    const productCards = document.querySelectorAll('.product-card');
+    const cardObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            // Apply animation with stagger
-            const delay = index * 0.1;
+            const delay = index * 0.12;
             entry.target.style.animation = `fadeInUp 0.6s ease-out ${delay}s forwards`;
-            entry.target.style.animationFillMode = 'both';
 
-            // Add hover effect
+            // Hover fallback SIN ZOOM
             entry.target.addEventListener('mouseenter', function() {
-              this.style.transform = 'scale(1.08)';
-              this.style.transition = 'transform 0.3s ease-out';
+              this.style.transform = 'translateY(-8px)';
+              this.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
+              this.style.transition = 'all 0.3s ease-out';
             });
 
             entry.target.addEventListener('mouseleave', function() {
-              this.style.transform = 'scale(1)';
-              this.style.transition = 'transform 0.3s ease-out';
+              this.style.transform = 'translateY(0)';
+              this.style.boxShadow = '0 5px 20px rgba(6, 6, 6, 0.151)';
+              this.style.transition = 'all 0.3s ease-out';
             });
           }
         });
@@ -250,44 +257,73 @@
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    productCards.forEach((card) => observer.observe(card));
+    productCards.forEach((card) => cardObserver.observe(card));
+
+    // Tarjetas (peces.html)
+    const tarjetas = document.querySelectorAll('.tarjeta');
+    const tarjetaObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            const delay = index * 0.12;
+            entry.target.style.animation = `fadeInUp 0.6s ease-out ${delay}s forwards`;
+
+            // Hover fallback SIN ZOOM
+            entry.target.addEventListener('mouseenter', function() {
+              this.style.transform = 'translateY(-8px)';
+              this.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.2)';
+              this.style.transition = 'all 0.3s ease-out';
+            });
+
+            entry.target.addEventListener('mouseleave', function() {
+              this.style.transform = 'translateY(0)';
+              this.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+              this.style.transition = 'all 0.3s ease-out';
+            });
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    tarjetas.forEach((tarjeta) => tarjetaObserver.observe(tarjeta));
 
     // Observe product info/description
-    animUtils.observe('[class*="product-info"], [class*="description"]', (entry) => {
+    animUtils.observe('.product-info', (entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInLeft 0.5s ease-out forwards';
+        entry.target.style.animation = 'fadeInUp 0.5s ease-out forwards';
       }
     });
 
-    // Observe CTA button
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-      const ctaObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              entry.target.style.animation = 'fadeInUp 0.6s ease-out 0.3s forwards';
-              entry.target.style.animationFillMode = 'both';
+    // Observe CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    const buttonObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out 0.2s forwards';
 
-              // Add hover effect
-              entry.target.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) translateY(-3px)';
-                this.style.transition = 'transform 0.3s ease-out';
-              });
+            // Hover fallback
+            entry.target.addEventListener('mouseenter', function() {
+              this.style.transform = 'translateY(-3px)';
+              this.style.boxShadow = '0 12px 30px rgba(30, 136, 229, 0.5)';
+              this.style.transition = 'all 0.3s ease-out';
+            });
 
-              entry.target.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) translateY(0)';
-                this.style.transition = 'transform 0.3s ease-out';
-              });
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
+            entry.target.addEventListener('mouseleave', function() {
+              this.style.transform = 'translateY(0)';
+              this.style.boxShadow = '0 8px 20px rgba(30, 136, 229, 0.3)';
+              this.style.transition = 'all 0.3s ease-out';
+            });
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
 
-      ctaObserver.observe(ctaButton);
-    }
+    ctaButtons.forEach((btn) => buttonObserver.observe(btn));
   }
 
   // Initialize when ready

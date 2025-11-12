@@ -1,5 +1,26 @@
 /*  CSS base */
 
+/* KEYFRAMES PARA ANIMACIONES FALLBACK */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* TRANSICIONES DE CARGA Y NAVEGACIÓN */
 html { background: #000; }
 
@@ -200,8 +221,11 @@ body {
 }
 
 .species-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* Use flex so cards can be centered easily; fallback to grid layout on wide screens */
+    display: flex;
+    justify-content: center; /* centra las cards horizontalmente */
+    align-items: stretch;
+    flex-wrap: wrap; /* permite que se envuelvan en pantallas pequeñas */
     gap: 30px;
     margin-top: 40px;
 }
@@ -213,7 +237,9 @@ body {
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
-    display: center;
+    /* fixed width to make centering predictable; responsive below */
+    width: 320px;
+    display: flex;
     flex-direction: column;
     align-items: center;
 
@@ -320,27 +346,7 @@ body {
     color: black        
 }
 
-/* Timeline */
-.timeline {
-    position: relative;
-}
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: var(--primary-color);
-}
-
-.timeline-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 50px;
-}
 
 /* Footer Styles */
 .footer {

@@ -10,9 +10,12 @@
 
 (function() {
   'use strict';
+  // Flag para evitar ejecuciones múltiples
+  let __heroTypingHasRun = false;
 
   /**
    * Tipea texto letra por letra de forma limpia
+   * Con contorno visible durante la escritura y permanente al final
    * @param {HTMLElement} element - Elemento a escribir
    * @param {string} fullText - Texto completo a escribir
    * @param {number} speed - Velocidad en ms por letra
@@ -30,6 +33,8 @@
       element.style.whiteSpace = 'normal';
       element.style.wordWrap = 'break-word';
       element.style.maxWidth = '90%';
+      // Aplicar el glow desde el inicio y mantenerlo todo el tiempo
+      element.style.textShadow = '0 0 15px rgba(255, 255, 255, 0.4)';
 
       let currentText = '';
       let charIndex = 0;
@@ -41,18 +46,21 @@
           charIndex++;
           setTimeout(type, speed);
         } else {
-          // Animación final de brillo
+          // Al completar, intensificar el glow y dejarlo permanente
           if (window.gsap) {
             window.gsap.to(element, {
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.6)',
-              duration: 0.5,
+              textShadow: '0 0 25px rgba(255, 255, 255, 0.7)',
+              duration: 0.4,
               ease: 'power2.out',
               onComplete: () => {
-                element.style.textShadow = 'none';
+                // Mantener un glow persistente pero suave
+                element.style.textShadow = '0 0 20px rgba(255, 255, 255, 0.5)';
                 resolve();
               },
             });
           } else {
+            // Fallback sin GSAP: mantener el glow que ya está aplicado
+            element.style.textShadow = '0 0 20px rgba(255, 255, 255, 0.5)';
             resolve();
           }
         }
@@ -67,6 +75,7 @@
    * Ejecuta: título → pausa → subtítulo
    */
   async function initTypingAnimation() {
+    if (__heroTypingHasRun) return; // no ejecutar más de una vez
     const title = document.querySelector('.hero-title');
     const subtitle = document.querySelector('.hero-subtitle');
 
@@ -90,6 +99,7 @@
     } catch (error) {
       console.warn('Error en typing animation:', error);
     }
+    __heroTypingHasRun = true;
   }
 
   /**
@@ -111,6 +121,8 @@
             !document.body.classList.contains('loading')
           ) {
             observer.disconnect();
+            // cancelar fallback
+            if (fallbackTimeout) clearTimeout(fallbackTimeout);
             // Small delay to ensure DOM is fully rendered
             setTimeout(initTypingAnimation, 200);
           }
@@ -120,8 +132,8 @@
       observer.observe(document.body, { attributes: true });
 
       // Fallback timeout (2.5s) in case observer doesn't trigger
-      setTimeout(() => {
-        observer.disconnect();
+      const fallbackTimeout = setTimeout(() => {
+        try { observer.disconnect(); } catch(e){}
         initTypingAnimation();
       }, 2500);
     }

@@ -195,6 +195,36 @@ body {
   color: #555;
 }
 
+/* CTA Button Styles */
+.cta-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.cta-button-container.diferenciadores-cta {
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #1e88e5, #27ae60);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(30, 136, 229, 0.5);
+}
+
 /* Footer Styles */
 .footer {
     background-color: #111;

@@ -71,10 +71,12 @@
         );
       }
 
-      // Species section (index) - 4 especies con iconos
+      // Species section (index) - 3 especies con iconos
       const speciesSection = document.querySelector('.species-section');
       if (speciesSection) {
         const speciesCards = speciesSection.querySelectorAll('.species-card');
+        
+        // Animar las cards principales
         gsap.fromTo(
           speciesCards,
           {
@@ -90,11 +92,57 @@
             stagger: 0.12,
             scrollTrigger: {
               trigger: speciesSection,
-              start: 'top 75%',
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
         );
+
+        // Animar nombres de especies (species-name)
+        const speciesNames = speciesSection.querySelectorAll('.species-name');
+        if (speciesNames.length > 0) {
+          gsap.fromTo(
+            speciesNames,
+            {
+              opacity: 0,
+              y: 10,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.12,
+              scrollTrigger: {
+                trigger: speciesSection,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
+        }
+
+        // Animar DESCRIPCIONES de especies (IMPORTANTE: .species-description)
+        const speciesDescriptions = speciesSection.querySelectorAll('.species-description');
+        if (speciesDescriptions.length > 0) {
+          gsap.fromTo(
+            speciesDescriptions,
+            {
+              opacity: 0,
+              y: 15,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.12,
+              scrollTrigger: {
+                trigger: speciesSection,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
+        }
 
         // Hover effect on species cards
         speciesCards.forEach((card) => {
@@ -131,11 +179,11 @@
             opacity: 1,
             y: 0,
             duration: 0.8,
-            scrollTrigger: {
-              trigger: valuesIntroSection,
-              start: 'top 75%',
-              toggleActions: 'play none none none',
-            },
+                scrollTrigger: {
+                trigger: valuesIntroSection,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+              },
           }
         );
 
@@ -154,9 +202,9 @@
               x: 0,
               scale: 1,
               duration: 0.8,
-              scrollTrigger: {
+                scrollTrigger: {
                 trigger: valuesIntroSection,
-                start: 'top 75%',
+                start: 'top 80%',
                 toggleActions: 'play none none none',
               },
             }
@@ -179,7 +227,7 @@
               stagger: 0.1,
               scrollTrigger: {
                 trigger: valuesIntroSection,
-                start: 'top 75%',
+                start: 'top 80%',
                 toggleActions: 'play none none none',
               },
             }
@@ -202,9 +250,9 @@
             x: 0,
             duration: 0.6,
             stagger: 0.15,
-            scrollTrigger: {
+              scrollTrigger: {
               trigger: missionVision,
-              start: 'top 75%',
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
@@ -228,7 +276,7 @@
             stagger: 0.1,
             scrollTrigger: {
               trigger: valuesSection,
-              start: 'top 75%',
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
@@ -271,7 +319,7 @@
             stagger: 0.1,
             scrollTrigger: {
               trigger: servicesSection,
-              start: 'top 75%',
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
@@ -295,7 +343,7 @@
             stagger: 0.15,
             scrollTrigger: {
               trigger: timelineSection,
-              start: 'top 75%',
+              start: 'top 80%',
               toggleActions: 'play none none none',
             },
           }
@@ -329,6 +377,37 @@
       });
     }
 
+    // Observe species cards (index) - fallback
+    animUtils.observe('.species-card', (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+
+        // Asegurar que nombres y descripciones también sean visibles
+        const name = entry.target.querySelector('.species-name');
+        const description = entry.target.querySelector('.species-description');
+        
+        if (name) {
+          name.style.opacity = '1';
+          name.style.animation = 'fadeInUp 0.5s ease-out forwards';
+        }
+        
+        if (description) {
+          description.style.opacity = '1';
+          description.style.animation = 'fadeInUp 0.5s ease-out 0.1s forwards';
+        }
+
+        // hover fallback
+        entry.target.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px) scale(1.05)';
+          this.style.transition = 'transform 0.25s ease-out';
+        });
+        entry.target.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+          this.style.transition = 'transform 0.25s ease-out';
+        });
+      }
+    });
+
     // Observe value cards with hover support
     animUtils.observe('.value-card', (entry) => {
       if (entry.isIntersecting) {
@@ -344,6 +423,20 @@
           this.style.transform = 'scale(1)';
           this.style.transition = 'transform 0.3s ease-out';
         });
+      }
+    });
+
+    // Observe values intro section (image + text)
+    animUtils.observe('.values-intro-section', (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+      }
+    });
+
+    // Observe products section
+    animUtils.observe('.products-section', (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
       }
     });
 
