@@ -30,12 +30,13 @@ body.page-exit {
 }
 
 :root {
-    --primary-color: #1e88e5;
-    --secondary-color: #1565c0;
-    --accent-color: #0d47a1;
-    --text-dark: #333;
-    --text-light: #666;
-    --bg-light: #e9f5f7;
+    --body-bg:  #bde6c1;
+    --section-bg:  #e1ebe7;
+    --primary-color: #0b6b50;
+    --secondary-color: #1e88e5;
+    --accent-color: #ff7a59;
+    --text-dark: #073642;
+    --text-light: #5f7f75;
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -57,9 +58,7 @@ body {
 /* sección about */
 .about-section {
       padding: 80px 20px;
-  background: #f7faf7;
-    padding: 80px 20px;
-  background: white;
+    background:  #e1ebe7;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -112,10 +111,7 @@ body {
 /* mission - vision */
 .mission-vision {
     padding: 80px 20px;
-    background: var(--bg-light);
-      padding: 80px 20px;
-  background: white;
-  border-radius: 20px;
+            background:  #e1ebe7;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
   margin: 120px auto 40px auto; /* ¡ESPACIO ARRIBA PARA EL MENÚ! */
@@ -161,9 +157,7 @@ body {
 /* values section */
 .values-section {
     padding: 80px 20px;
-    background: var(--white);
-      padding: 80px 20px;
-  background: white;
+            background: #e1ebe7;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -188,7 +182,7 @@ body {
 }
 
 .value-card {
-    background: var(--bg-light);
+    background:  #d3dce4;
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -213,9 +207,7 @@ body {
 /* nuestros servicios banner */
 .services-banner {
     padding: 80px 20px;
-    background: var(--white);
-    padding: 80px 20px;
-    background: white;
+        background: #e1ebe7;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
@@ -262,7 +254,7 @@ body {
 }
 
 .services-image .image-placeholder {
-    background: var(--bg-light);
+    background: var(--section-bg);
     border-radius: 15px;
     height: 420px; /* igual que la imagen de ¿Quiénes Somos? */
     width: 100%;
@@ -287,7 +279,7 @@ body {
 /* transparencia */
 .transparencia-banner {
     padding: 80px 20px;
-    background: white;
+        background: #e1ebe7;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
@@ -331,7 +323,7 @@ body {
 
 /* Contenedor visual del video dentro de la sección Transparencia */
 .transparencia-content .image-placeholder {
-    background: var(--bg-light);
+    background: var(--section-bg);
     border-radius: 15px;
     height: 350px; 
     width: 100%; 
@@ -356,9 +348,7 @@ body {
 /* timeline section */
 .timeline-section {
     padding: 80px 20px;
-    background: var(--white);
-      padding: 80px 20px;
-  background: white;
+            background: #e1ebe7;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -412,7 +402,7 @@ body {
 }
 
 .timeline-content {
-    background: var(--bg-light);
+    background: var(--section-bg);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);

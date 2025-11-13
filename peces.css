@@ -29,12 +29,13 @@ body.page-exit {
     box-sizing: border-box;
 }
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-dark: #2c3e50;
-    --text-light: #7f8c8d;
-    --bg-light: #ecf0f1;
+    --body-bg:  #bde6c1;
+    --section-bg:  #e1ebe7;
+    --primary-color: #0b6b50;
+    --secondary-color: #1e88e5;
+    --accent-color: #ff7a59;
+    --text-dark: #073642;
+    --text-light: #5f7f75;
     --white: #ffffff;
 }
 
@@ -42,6 +43,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    background-color: var(--body-bg);
     overflow-x: hidden;
 }
 
@@ -51,9 +53,7 @@ body {
 
 .info-section {
    padding: 80px 20px;
-  background: #f7faf7;
-        padding: 80px 20px;
-  background: white;
+  background: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -68,6 +68,15 @@ body {
   grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
   gap: 50px;
   align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Imagen específica para consistencia con nosotros.css */
+.info-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .texto {
@@ -98,10 +107,8 @@ body {
 /*seccion diferenciadores*/
 
 .diferenciadores-section {
-  padding: 80px 20px;
-  background: #f7faf7;
-        padding: 80px 20px;
-  background: white;
+    padding: 80px 20px;
+    background: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -141,8 +148,8 @@ body {
 
 /* seccion productos */
 .productos {
-   padding: 80px 20px;
-  background: white;
+    padding: 80px 20px;
+  background: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -165,7 +172,7 @@ body {
 }
 
 .tarjeta {
-  background-color: white;
+  background-color: #d3dce4;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 16px;
@@ -370,6 +377,7 @@ body {
 /* Responsive */
 @media (max-width: 968px) {
     .about-content,
+    .info-grid,
     .mv-grid,
     .footer-content,
     .services-content {

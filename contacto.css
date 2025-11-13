@@ -27,13 +27,13 @@ body.page-exit {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    /* Paleta asumida desde Figma (ajustable) */
-    --primary-color: #0e6b48; /* verde principal */
-    --secondary-color: #12b886; /* verde claro */
-    --accent-color: #ffc107; /* dorado/acento */
-    --text-dark: #07281f;
-    --text-light: #6b7b73;
-    --bg-light: #f7faf7;
+    --body-bg:  #bde6c1;
+    --section-bg:  #e1ebe7;
+    --primary-color: #0b6b50;
+    --secondary-color: #1e88e5;
+    --accent-color: #ff7a59;
+    --text-dark: #073642;
+    --text-light: #5f7f75;
     --white: #ffffff;
     --transition: all 0.25s ease;
 }
@@ -42,6 +42,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    background-color: var(--body-bg);
 }
 .whatsapp-flotante {
   position: fixed;
@@ -64,10 +65,8 @@ body {
 
 /* texto + imagen */
 .info-section {
-  padding: 80px 20px;
-  background: #f7faf7;
-        padding: 80px 20px;
-  background: white;
+    padding: 80px 20px;
+    background: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -108,7 +107,7 @@ body {
 
 .about-section {
         padding: 80px 20px;
-  background: white;
+    background: var(--section-bg);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   max-width: 1200px;

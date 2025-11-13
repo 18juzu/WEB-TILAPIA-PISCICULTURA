@@ -76,29 +76,36 @@
    */
   async function initTypingAnimation() {
     if (__heroTypingHasRun) return; // no ejecutar más de una vez
-    const title = document.querySelector('.hero-title');
-    const subtitle = document.querySelector('.hero-subtitle');
+    // Buscar cualquier encabezado dentro del hero (.hero-content o .hero)
+    const heroRoot = document.querySelector('.hero-content') || document.querySelector('.hero') || document.body;
 
-    if (!title && !subtitle) return;
+    // Selección flexible: mantiene compatibilidad con las clases antiguas
+    // y además acepta h1..h6 dentro del hero.
+    const nodes = heroRoot.querySelectorAll('.hero-title, .hero-subtitle, h1, h2, h3, h4, h5, h6');
+
+    if (!nodes || nodes.length === 0) return;
 
     try {
-      // Obtener el texto original
-      const titleText = title ? title.innerText : '';
-      const subtitleText = subtitle ? subtitle.innerText : '';
+      // Animar en el orden del DOM los encabezados encontrados
+      for (let i = 0; i < nodes.length; i++) {
+        const el = nodes[i];
+        // Guardar texto actual (respetando texto sin HTML interno)
+        const txt = el.innerText || el.textContent || '';
+        if (!txt || txt.trim().length === 0) continue;
 
-      // Escribir título
-      if (title && titleText.length > 0) {
-        await typeText(title, titleText, 50); // 50ms por letra
-        await new Promise((resolve) => setTimeout(resolve, 500)); // Pausa entre título y subtítulo
-      }
+        // Velocidad: primera linea un poco más lenta para enfoque, el resto ligeramente más rápido
+        const speed = i === 0 ? 50 : 45;
 
-      // Escribir subtítulo
-      if (subtitle && subtitleText.length > 0) {
-        await typeText(subtitle, subtitleText, 45); // 45ms por letra
+        // Esperar a que cada linea termine antes de la siguiente
+        await typeText(el, txt, speed);
+
+        // Pequeña pausa entre líneas
+        if (i === 0 && nodes.length > 1) await new Promise((resolve) => setTimeout(resolve, 400));
       }
     } catch (error) {
       console.warn('Error en typing animation:', error);
     }
+
     __heroTypingHasRun = true;
   }
 
